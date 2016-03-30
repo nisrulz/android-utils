@@ -1,6 +1,6 @@
-#Gradle
+#Crypto
 
-`maven_push.gradle` - Gradle file to push artifacts to  MavenCentral by Chris Banes
+`AesCbcWithIntegrity.java` - A simple Android class for encrypting & decrypting strings, aiming to avoid the classic mistakes that most such classes suffer from
 
 License
 =======
