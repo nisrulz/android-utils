@@ -107,7 +107,7 @@ public class ConvertUtils {
      * @param params the params
      * @return the string
      */
-    static String hashMap2String(HashMap<String, String> params) {
+    public static String hashMap2String(HashMap<String, String> params) {
         StringBuilder st = new StringBuilder();
         for (String key : params.keySet()) {
             st.append(key).append("=").append(params.get(key)).append("&");
@@ -117,4 +117,26 @@ public class ConvertUtils {
     }
 
 
+    /**
+     * Convert key=value type String to HashMap<String,String>
+     *
+     * @param paramString the param string
+     * @return hash map
+     */
+    public static HashMap<String, String> string2HashMap(String paramString) {
+        HashMap<String, String> params = new HashMap<>();
+        // Split String on basis of separator used, here '&'
+        for (String keyValue : paramString.split(" *& *")) {
+
+            // Here the each part is futher splitted taking in account the equal
+            // sign '=' which demarcates the key
+            // and valuefor the hashmap
+            String[] pairs = keyValue.split(" *= *", 2);
+
+            // Those key and values are then put into hashmap
+            params.put(pairs[0], pairs.length == 1 ? "" : pairs[1]);
+
+        }
+        return params;
+    }
 }
