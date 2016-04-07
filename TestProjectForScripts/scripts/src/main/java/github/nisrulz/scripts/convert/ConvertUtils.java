@@ -87,5 +87,18 @@ public class ConvertUtils {
         return (int) ((dp * metrics.density) + 0.5);
     }
 
+    /**
+     * Pixels to dp int.
+     *
+     * @param context the context
+     * @param px      the px
+     * @return the int
+     */
+    public static int pixelsToDp(Activity context, int px) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        return (int) ((px / metrics.density) + 0.5);
+    }
+
 
 }
