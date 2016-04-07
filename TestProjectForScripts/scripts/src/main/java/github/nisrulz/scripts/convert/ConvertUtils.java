@@ -1,10 +1,12 @@
 package github.nisrulz.scripts.convert;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.util.DisplayMetrics;
 
 import java.util.List;
 
@@ -43,11 +45,11 @@ public class ConvertUtils {
      * <p/>
      * Inspired from SO answer: http://stackoverflow.com/a/26318757/1446466
      *
-     * @param context
+     * @param context        the context
      * @param implicitIntent - The original implicit intent
      * @return Explicit Intent created from the implicit original intent
      */
-    public static Intent createExplicitFromImplicitIntent(Context context, Intent implicitIntent) {
+    public static Intent implicit2ExplicitIntent(Context context, Intent implicitIntent) {
         // Retrieve all services that can match the given intent
         PackageManager pm = context.getPackageManager();
         List<ResolveInfo> resolveInfo = pm.queryIntentServices(implicitIntent, 0);
@@ -70,6 +72,19 @@ public class ConvertUtils {
         explicitIntent.setComponent(component);
 
         return explicitIntent;
+    }
+
+    /**
+     * Dp to pixels
+     *
+     * @param context the context
+     * @param dp      the dp
+     * @return the int
+     */
+    public static int dpToPixels(Activity context, int dp) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        return (int) ((dp * metrics.density) + 0.5);
     }
 
 
