@@ -29,4 +29,20 @@ public class StringUtils {
 
         return titleCase.toString();
     }
+
+    /**
+     * Remove last char string.
+     *
+     * @param stringText the string text
+     * @param endingChar the ending char
+     * @return the string
+     */
+    public static String removeLastChar(String stringText, String endingChar) {
+        if (!stringText.equals("") && stringText != null) {
+            if (stringText.endsWith(endingChar)) {
+                stringText = stringText.substring(0, stringText.length() - 1);
+            }
+        }
+        return stringText;
+    }
 }

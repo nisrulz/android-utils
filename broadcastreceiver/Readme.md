@@ -1,18 +1,6 @@
-#Gradle
+#BroadcastReceiver
 
-1. `maven_push.gradle` - Gradle file to push artifacts to  MavenCentral by Chris Banes
-2. Use local Library Module (.aar package)
-    ```gradle
-    dependencies {
-       compile(name:'nameOfYourAARFileWithoutExtension', ext:'aar')
-     }
-    repositories{
-          flatDir{
-                  dirs 'libs'
-           }
-     }
-     
-    ```
+
 
 
 License
