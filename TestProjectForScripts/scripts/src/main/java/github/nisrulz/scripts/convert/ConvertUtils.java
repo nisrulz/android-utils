@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.DisplayMetrics;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -98,6 +99,21 @@ public class ConvertUtils {
         DisplayMetrics metrics = new DisplayMetrics();
         context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         return (int) ((px / metrics.density) + 0.5);
+    }
+
+    /**
+     * Convert HashMap<String,String> to key=value type String
+     *
+     * @param params the params
+     * @return the string
+     */
+    static String hashMap2String(HashMap<String, String> params) {
+        StringBuilder st = new StringBuilder();
+        for (String key : params.keySet()) {
+            st.append(key).append("=").append(params.get(key)).append("&");
+        }
+        st.deleteCharAt(st.lastIndexOf("&"));
+        return st.toString();
     }
 
 
