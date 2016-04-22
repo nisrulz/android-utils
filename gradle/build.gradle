@@ -1,0 +1,43 @@
+package github.nisrulz.scripts.gradle
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "github.nisrulz.testprojectforscripts"
+        minSdkVersion 9
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    //add zopfli to variants with release build type
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == 'release') {
+            variant.outputs.each { output ->
+                output.assemble.doLast {
+                    println "Zopflifying... it might take a while"
+                    exec {
+                        commandLine output.zipAlign.zipAlignExe,'-f','-z', '4', output.outputFile.absolutePath , output.outputFile.absolutePath.replaceAll('\\.apk$', '-zopfli.apk')
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
