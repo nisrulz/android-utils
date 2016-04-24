@@ -11,6 +11,7 @@ This is a list of all the android libraries built by me.
 + [ScreenShott](https://github.com/nisrulz/screenshott) - Simple library to take a screenshot of the device screen , programmatically! 
 + [Sensey](https://github.com/nisrulz/Sensey) - Android library to make detecting gestures easy
 + [OptimusHTTP](https://github.com/nisrulz/OptimusHTTP) - Android library that simplifys networking in android via an async http client
++ [ShoutOut](https://github.com/nisrulz/ShoutOut) - Android library for logging information in android
 
 
 
