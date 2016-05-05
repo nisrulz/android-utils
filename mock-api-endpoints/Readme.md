@@ -5,6 +5,8 @@ This is a list of free mockable api endpoint systems
 + [Mockey](https://github.com/clafonta/Mockey) - A tool for testing application interactions over http, with a focus on testing web services, specifically web applications that consume XML, JSON, and HTML.
 + [JSON Placeholder](http://jsonplaceholder.typicode.com/) - Fake Online REST API for Testing and Prototyping
 + [API Studio](http://apistudio.io/) - a playground for API developers
++ [Mocky](http://www.mocky.io/) - Mock your HTTP responses to test your REST API
++ [Mockbin](http://mockbin.com) - Mockbin allows you to generate custom endpoints to test, mock, and track HTTP requests & responses between libraries, sockets and APIs.
 
 License
 =======
