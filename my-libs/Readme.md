@@ -12,7 +12,7 @@ This is a list of all the android libraries built by me.
 + [Sensey](https://github.com/nisrulz/Sensey) - Android library to make detecting gestures easy
 + [OptimusHTTP](https://github.com/nisrulz/OptimusHTTP) - Android library that simplifys networking in android via an async http client
 + [ShoutOut](https://github.com/nisrulz/ShoutOut) - Android library for logging information in android
-+ [EasyDeviceInfo](https://github.com/nisrulz/mavenrepo/tree/master/releases/com/github/nisrulz/easydeviceinfo) - Enabling device information to be at android developers hand like a piece of cake!
++ [EasyDeviceInfo](https://github.com/nisrulz/easydeviceinfo) - Enabling device information to be at android developers hand like a piece of cake!
 + [RecyclerViewHelper](https://github.com/nisrulz/recyclerviewhelper) - RecyclerViewHelper provides the most common functions around recycler view like Swipe to dismiss, Drag and Drop, Divider in the ui, events for when item selected and when not selected, on-click listener for items.
 
 
