@@ -1,4 +1,4 @@
-# Android-Utils
+# Android-Utils  [![Twitter](https://img.shields.io/badge/Twitter-@nisrulz-blue.svg?style=flat)](http://twitter.com/nisrulz)
 
 Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
