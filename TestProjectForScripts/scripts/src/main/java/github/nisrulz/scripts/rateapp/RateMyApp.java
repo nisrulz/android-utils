@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * The type Rate my app.
+ */
 public class RateMyApp {
 
   private final static String APP_TITLE = "YOUR-APP-NAME";
@@ -18,6 +21,11 @@ public class RateMyApp {
   private final static int DAYS_UNTIL_PROMPT = 3;
   private final static int LAUNCHES_UNTIL_PROMPT = 7;
 
+  /**
+   * App launched.
+   *
+   * @param mContext the m context
+   */
   public static void app_launched(Context mContext) {
     SharedPreferences prefs = mContext.getSharedPreferences("apprater", 0);
     if (prefs.getBoolean("dontshowagain", false)) {
@@ -51,6 +59,12 @@ public class RateMyApp {
     editor.commit();
   }
 
+  /**
+   * Show rate dialog.
+   *
+   * @param mContext the m context
+   * @param editor the editor
+   */
   public static void showRateDialog(final Context mContext, final SharedPreferences.Editor editor) {
     final Dialog dialog = new Dialog(mContext);
     dialog.setTitle("Rate " + APP_TITLE);
