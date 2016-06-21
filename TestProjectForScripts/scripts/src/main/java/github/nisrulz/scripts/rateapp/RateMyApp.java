@@ -70,8 +70,13 @@ public class RateMyApp {
     b1.setText("Rate " + APP_TITLE);
     b1.setOnClickListener(new View.OnClickListener() {
       public void onClick(View v) {
-        mContext.startActivity(
-            new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + APP_PNAME)));
+        try {
+          mContext.startActivity(
+              new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + APP_PNAME)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+          mContext.startActivity(new Intent(Intent.ACTION_VIEW,
+              Uri.parse("http://play.google.com/store/apps/details?id=" + APP_PNAME)));
+        }
         dialog.dismiss();
       }
     });
