@@ -1,5 +1,6 @@
 package github.nisrulz.scripts.misc;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static android.view.WindowManager.LayoutParams;
 
 /**
  * The type Misc utils.
@@ -175,5 +178,14 @@ public class MiscUtils {
             .build());
       }
     }
+  }
+
+  /**
+   * Disable screenshot functionality.
+   *
+   * @param activity the activity
+   */
+  public static void disableScreenshotFunctionality(Activity activity) {
+    activity.getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
   }
 }

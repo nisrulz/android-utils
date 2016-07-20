@@ -1,4 +1,26 @@
-#Misc
+# Misc Util Methods
+
++ `getRandomNumberInRange(int min, int max)`
+
++ `checkIfPermissionGranted(Context context, String permission)`
+
++ `generateCsvFile(String sFileName, String data)`
+
++ `rateMyApp(Context context)`
+
++ `shareMyApp(Context context, String subject, String message)`
+
++ `sendMail(Context context, String mailtoid, String subject, String body)`
+
++ `enableStrictMode(boolean enable)`
+
++ `disableScreenshotFunctionality(Activity activity)`
+
+  > Sets the SECURE window flag and treats the content of the window as secure, preventing it from appearing in screenshots or from being viewed on non-secure displays.
+
+
+
+
 
 License
 =======
