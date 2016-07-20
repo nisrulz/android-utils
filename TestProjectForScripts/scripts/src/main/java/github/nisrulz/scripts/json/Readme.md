@@ -1,4 +1,8 @@
-#JSONUtils
+# JSON Util Methods
+
++ `loadJSONFromAsset(Context context, String filename)`
+
++ `iterateOverJSON(JSONObject jsonObject)`
 
 
 License
