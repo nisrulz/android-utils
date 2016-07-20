@@ -1,8 +1,8 @@
 # WakeLock Util Methods
 
-+ `holdWakeLock(Context context)`
++ `holdWakeLock(Context context)` - Hold up the wakelock
 
-+ `releaseWakeLock()`
++ `releaseWakeLock()` - Release the wakelock
 
 
 License

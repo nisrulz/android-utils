@@ -1,8 +1,8 @@
 # String Util Methods
 
-+ `toTitleCase(String input)`
++ `toTitleCase(String input)`- Convert string to title case
 
-+ `removeLastChar(String stringText, String endingChar)`
++ `removeLastChar(String stringText, String endingChar)` - Remove the last specified character
 
 License
 =======

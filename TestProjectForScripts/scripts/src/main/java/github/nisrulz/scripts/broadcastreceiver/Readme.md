@@ -1,8 +1,8 @@
 # BroadcastReceiver Util Methods
 
-+ `setStateOfReceiver(Context context, Class<?> brClass, boolean enabled)`
++ `setStateOfReceiver(Context context, Class<?> brClass, boolean enabled)` - Enable/Disable the Broadcast Receiver
 
-+ `broadcastData(Context context, String data, String action, String custompermission)`
++ `broadcastData(Context context, String data, String action, String custompermission)` - Broadcast data as a message
 
 
 

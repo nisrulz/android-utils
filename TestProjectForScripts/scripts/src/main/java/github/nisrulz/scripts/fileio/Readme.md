@@ -1,8 +1,8 @@
 # FileIO Util Methods
 
-+ `saveHashMapToFile(Context context, String fileName,HashMap<String, String> h)`
++ `saveHashMapToFile(Context context, String fileName,HashMap<String, String> h)` - Save HashMap to a file
 
-+ `HashMap<String, String> loadHashMapFromFile(Context context, String fileName)`
++ `HashMap<String, String> loadHashMapFromFile(Context context, String fileName)` - Read HashMap from an already saved file of the right form.
 
 
 License

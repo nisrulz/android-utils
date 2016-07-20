@@ -1,6 +1,6 @@
 # Service Util Methods
 
-+ `isServiceRunning(Context context, Class<?> serviceClass)`
++ `isServiceRunning(Context context, Class<?> serviceClass)` - Check if the service is running in the device.
 
 
 

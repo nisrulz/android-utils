@@ -1,16 +1,16 @@
 # SharedPreference Util Methods
 
-+ `saveData(Context context, String key, String val)`
++ `saveData(Context context, String key, String val)` - Save String value in shared prefs
 
-+ `saveData(Context context, String key, int val)`
++ `saveData(Context context, String key, int val)` - Save int value in shared prefs
 
-+ `saveData(Context context, String key, boolean val)`
++ `saveData(Context context, String key, boolean val)` - Save boolean value in shared prefs
 
-+ `getStringData(Context context, String key)`
++ `getStringData(Context context, String key)` - Get String value from shared prefs
 
-+ `getIntData(Context context, String key)`
++ `getIntData(Context context, String key)` - Get int value from shared prefs
 
-+ `getBooleanData(Context context, String key)`
++ `getBooleanData(Context context, String key)` - Save boolean value from shared prefs
 
 License
 =======

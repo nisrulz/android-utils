@@ -1,8 +1,6 @@
 # Fragments Util Methods
 
-+ `newInstance(int index)`
-
-+ ``
++ `newInstance(int index)` - Instantiate the fragment.
 
 License
 =======

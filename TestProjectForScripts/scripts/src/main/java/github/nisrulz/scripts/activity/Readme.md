@@ -1,8 +1,8 @@
 # Activity Util Methods
 
-+ `setFullScreen(Activity activity)`
++ `setFullScreen(Activity activity)` - Sets the activity in Fullscreen mode
 
-+ `hideActionBar(Activity activity)`
++ `hideActionBar(Activity activity)` - Hides the activity's action bar
 
 
 

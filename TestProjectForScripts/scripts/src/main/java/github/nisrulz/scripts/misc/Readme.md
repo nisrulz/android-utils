@@ -1,20 +1,20 @@
 # Misc Util Methods
 
-+ `getRandomNumberInRange(int min, int max)`
++ `getRandomNumberInRange(int min, int max)` - Get a random integer between a range
 
-+ `checkIfPermissionGranted(Context context, String permission)`
++ `checkIfPermissionGranted(Context context, String permission)` - Check if the permission is granted or not
 
-+ `generateCsvFile(String sFileName, String data)`
++ `generateCsvFile(String sFileName, String data)`- Generate a CSV file from a string
 
-+ `rateMyApp(Context context)`
++ `rateMyApp(Context context)` - Take user to playstore to rate the app.
 
-+ `shareMyApp(Context context, String subject, String message)`
++ `shareMyApp(Context context, String subject, String message)` - Open up the share dialogue to share the app with others
 
-+ `sendMail(Context context, String mailtoid, String subject, String body)`
++ `sendMail(Context context, String mailtoid, String subject, String body)` - Open up the default mail client to send a mail pre-filled with specified data.
 
-+ `enableStrictMode(boolean enable)`
++ `enableStrictMode(boolean enable)` - Enable strict mode
 
-+ `disableScreenshotFunctionality(Activity activity)`
++ `disableScreenshotFunctionality(Activity activity)` - Disable ability to take a screenshot of the activity
 
   > Sets the SECURE window flag and treats the content of the window as secure, preventing it from appearing in screenshots or from being viewed on non-secure displays.
 

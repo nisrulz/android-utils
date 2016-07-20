@@ -1,6 +1,6 @@
 # Battery Util Methods
 
-+ `registerBatteryChangeBroadcastReceiver(Context context,final BatteryChargeListener batteryChargeListener)`
++ `registerBatteryChangeBroadcastReceiver(Context context,final BatteryChargeListener batteryChargeListener)` - Register a listener for getting updates of device charging, discharging or completely charged.
 
 
 
