@@ -1,4 +1,8 @@
-#Activity
+# Activity Util Methods
+
++ `setFullScreen(Activity activity)`
+
++ `hideActionBar(Activity activity)`
 
 
 

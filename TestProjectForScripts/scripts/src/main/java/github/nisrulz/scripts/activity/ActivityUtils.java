@@ -14,7 +14,7 @@ public class ActivityUtils {
      *
      * @param activity the activity
      */
-    void setFullScreen(Activity activity) {
+    public  static void setFullScreen(Activity activity) {
         // Call before calling setContentView();
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager
                 .LayoutParams
@@ -26,7 +26,7 @@ public class ActivityUtils {
      *
      * @param activity the activity
      */
-    void hideActionBar(Activity activity) {
+    public static void hideActionBar(Activity activity) {
         // Call before calling setContentView();
         activity.getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
