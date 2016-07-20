@@ -1,4 +1,16 @@
-#Convert
+# Convert Util Methods
+
++ `short2byte(short[] sData)`
+
++ `implicit2ExplicitIntent(Context context, Intent implicitIntent)`
+
++ `dpToPixels(Activity context, int dp)`
+
++ `pixelsToDp(Activity context, int px)`
+
++ `hashMap2String(HashMap<String, String> params)`
+
++ `string2HashMap(String paramString)`
 
 
 
