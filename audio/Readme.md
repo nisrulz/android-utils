@@ -1,4 +1,8 @@
-#Audio
+# Audio Util Methods
+
++ `getValidSampleRates(int channelConfiguration, int audioEncoding)`
+
++ `checkCorrectBufferSize(int audioSource, int fs, int channelConfiguration, int audioEncoding)`
 
 
 
