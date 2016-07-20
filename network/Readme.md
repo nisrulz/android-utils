@@ -1,21 +1,21 @@
 # Network Util Methods
 
-+ `getNetworkInfo(Context context)`
++ `getNetworkInfo(Context context)` - Get network information
 
-+ `isConnected(Context context)`
++ `isConnected(Context context)` - Check if connected to internet or not
 
-+ `isConnectedWifi(Context context)`
++ `isConnectedWifi(Context context)` - Check if connected to WIFI
 
-+ `isConnectedMobile(Context context)`
++ `isConnectedMobile(Context context)` - Check if connected to Cellular Mobile Internet
 
-+ `isConnectedFast(Context context)`
++ `isConnectedFast(Context context)` - Check if connected to a fast connection
 
-+ `isConnectionFast(int type, int subType)`
++ `isConnectionFast(int type, int subType)` - Check if connected to a fast connection, more options
 
 
 # Okhttp Util Methods
 
-+ `saveBinaryFileFromResponse(Context context, String filename, Response response)`
++ `saveBinaryFileFromResponse(Context context, String filename, Response response)` - Save the response as a binary file i.e html file.
 
 
 License

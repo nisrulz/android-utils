@@ -1,8 +1,8 @@
 # JSON Util Methods
 
-+ `loadJSONFromAsset(Context context, String filename)`
++ `loadJSONFromAsset(Context context, String filename)` - Read and parse a JSON file stored in assets folder
 
-+ `iterateOverJSON(JSONObject jsonObject)`
++ `iterateOverJSON(JSONObject jsonObject)` -  Iterate over all keys of the JSON
 
 
 License

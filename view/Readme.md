@@ -1,8 +1,8 @@
 # View Util Methods
 
-+ `getScreenSize(Activity activity)`
++ `getScreenSize(Activity activity)` - Get the screen dimensions
 
-+ `setOrientation(Activity activity, boolean status)`
++ `setOrientation(Activity activity, boolean status)` - Set orientation change lock
 
 License
 =======

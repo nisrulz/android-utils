@@ -1,8 +1,8 @@
 # RateMyApp Util Methods
 
-+ `app_launched(Context mContext)`
++ `app_launched(Context mContext)` - Launch Rate the app dialogue when the app is launched for the first time.
 
-+ `showRateDialog(final Context mContext, final SharedPreferences.Editor editor)`
++ `showRateDialog(final Context mContext, final SharedPreferences.Editor editor)` - Launch Rate the app dialogue when the app is launched based of some random logic.
 
 
 License

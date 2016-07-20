@@ -1,10 +1,10 @@
 # WebView Util Methods
 
-+ `enableJavaScript(WebView webView, boolean enabled)`
++ `enableJavaScript(WebView webView, boolean enabled)` - Enable javascript in webview
 
-+ `enableWebViewDebugging(boolean enabled)`
++ `enableWebViewDebugging(boolean enabled)` - Enable debugging in webview
 
-+ `syncCookieWithSystemBrowser(Context context)`
++ `syncCookieWithSystemBrowser(Context context)` - Request to sync cookies with system browser
 
 
 License

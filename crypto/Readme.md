@@ -6,13 +6,13 @@
 
 # EncodeDecodeBase64 Util Methods
 
-+ `encodedMessage(String message)`
++ `encodedMessage(String message)` - Encode message using Base64 encoding
 
-+ `decodedMessage(String message)`
++ `decodedMessage(String message)` - Decode encoded message using Base64
 
 # MD5 Util Methods
 
-+ `md5(String input)`
++ `md5(String input)` -Get MD5 value for a string
 
 License
 =======

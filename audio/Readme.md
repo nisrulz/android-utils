@@ -1,8 +1,8 @@
 # Audio Util Methods
 
-+ `getValidSampleRates(int channelConfiguration, int audioEncoding)`
++ `getValidSampleRates(int channelConfiguration, int audioEncoding)` - Get a valid sample rate for the device
 
-+ `checkCorrectBufferSize(int audioSource, int fs, int channelConfiguration, int audioEncoding)`
++ `checkCorrectBufferSize(int audioSource, int fs, int channelConfiguration, int audioEncoding)` - Get the valid buffer size for your **AudioRecord** instance.
 
 
 
