@@ -1,4 +1,8 @@
-#String
+# String Util Methods
+
++ `toTitleCase(String input)`
+
++ `removeLastChar(String stringText, String endingChar)`
 
 License
 =======
