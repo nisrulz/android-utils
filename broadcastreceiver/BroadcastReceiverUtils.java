@@ -41,7 +41,7 @@ public class BroadcastReceiverUtils {
      * @param action           the action
      * @param custompermission the custompermission
      */
-    public static void broadcastSDKVer(Context context, String data, String action, String custompermission) {
+    public static void broadcastData(Context context, String data, String action, String custompermission) {
         Intent i = new Intent();
         i.putExtra("data", data);
         i.setAction(action); // action ~ "com.example.android.action"

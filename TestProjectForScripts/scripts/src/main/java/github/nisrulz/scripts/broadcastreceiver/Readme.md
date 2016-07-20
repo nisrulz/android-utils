@@ -1,4 +1,8 @@
-#BroadcastReceiver
+# BroadcastReceiver Util Methods
+
++ `setStateOfReceiver(Context context, Class<?> brClass, boolean enabled)`
+
++ `broadcastData(Context context, String data, String action, String custompermission)`
 
 
 
