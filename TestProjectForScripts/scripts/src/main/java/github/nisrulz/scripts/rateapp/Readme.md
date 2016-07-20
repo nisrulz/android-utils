@@ -1,6 +1,8 @@
-#RateMyApp
+# RateMyApp Util Methods
 
++ `app_launched(Context mContext)`
 
++ `showRateDialog(final Context mContext, final SharedPreferences.Editor editor)`
 
 
 License
