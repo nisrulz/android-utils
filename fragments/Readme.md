@@ -1,4 +1,8 @@
-#Fragments
+# Fragments Util Methods
+
++ `newInstance(int index)`
+
++ ``
 
 License
 =======
