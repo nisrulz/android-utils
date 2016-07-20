@@ -1,4 +1,6 @@
-#Service
+# Service Util Methods
+
++ `isServiceRunning(Context context, Class<?> serviceClass)`
 
 
 
