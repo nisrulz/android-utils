@@ -1,4 +1,16 @@
-#SharedPreferences
+# SharedPreference Util Methods
+
++ `saveData(Context context, String key, String val)`
+
++ `saveData(Context context, String key, int val)`
+
++ `saveData(Context context, String key, boolean val)`
+
++ `getStringData(Context context, String key)`
+
++ `getIntData(Context context, String key)`
+
++ `getBooleanData(Context context, String key)`
 
 License
 =======
