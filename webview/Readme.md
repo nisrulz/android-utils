@@ -1,6 +1,10 @@
-#WebView
+# WebView Util Methods
 
++ `enableJavaScript(WebView webView, boolean enabled)`
 
++ `enableWebViewDebugging(boolean enabled)`
+
++ `syncCookieWithSystemBrowser(Context context)`
 
 
 License
