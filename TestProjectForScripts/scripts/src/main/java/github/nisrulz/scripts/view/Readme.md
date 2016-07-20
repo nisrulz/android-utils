@@ -1,4 +1,8 @@
-#View
+# View Util Methods
+
++ `getScreenSize(Activity activity)`
+
++ `setOrientation(Activity activity, boolean status)`
 
 License
 =======
