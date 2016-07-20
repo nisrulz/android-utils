@@ -1,4 +1,8 @@
-#FileIO
+# FileIO Util Methods
+
++ `saveHashMapToFile(Context context, String fileName,HashMap<String, String> h)`
+
++ `HashMap<String, String> loadHashMapFromFile(Context context, String fileName)`
 
 
 License
