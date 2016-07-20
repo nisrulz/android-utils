@@ -1,4 +1,22 @@
-#Network
+# Network Util Methods
+
++ `getNetworkInfo(Context context)`
+
++ `isConnected(Context context)`
+
++ `isConnectedWifi(Context context)`
+
++ `isConnectedMobile(Context context)`
+
++ `isConnectedFast(Context context)`
+
++ `isConnectionFast(int type, int subType)`
+
+
+# Okhttp Util Methods
+
++ `saveBinaryFileFromResponse(Context context, String filename, Response response)`
+
 
 License
 =======
