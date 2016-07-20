@@ -1,4 +1,6 @@
-#Battery
+# Battery Util Methods
+
++ `registerBatteryChangeBroadcastReceiver(Context context,final BatteryChargeListener batteryChargeListener)`
 
 
 
