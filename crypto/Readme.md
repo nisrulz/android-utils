@@ -1,6 +1,18 @@
-#Crypto
+# AesCbcWithIntegrity  Util Methods
 
-`AesCbcWithIntegrity.java` - A simple Android class for encrypting & decrypting strings, aiming to avoid the classic mistakes that most such classes suffer from
+
++ `AesCbcWithIntegrity.java` - A simple Android class for encrypting & decrypting strings, aiming to avoid the classic mistakes that most such classes suffer from
+
+
+# EncodeDecodeBase64 Util Methods
+
++ `encodedMessage(String message)`
+
++ `decodedMessage(String message)`
+
+# MD5 Util Methods
+
++ `md5(String input)`
 
 License
 =======
