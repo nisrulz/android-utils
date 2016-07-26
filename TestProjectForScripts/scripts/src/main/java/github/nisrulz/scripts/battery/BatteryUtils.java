@@ -16,35 +16,34 @@ public class BatteryUtils {
     /**
      * Register battery change broadcast receiver.
      *
-     * @param context               the context
+     * @param context the context
      * @param batteryChargeListener the battery charge listener
      */
     public static void registerBatteryChangeBroadcastReceiver(Context context,
-                                                              final BatteryChargeListener batteryChargeListener) {
-        final IntentFilter theFilter = new IntentFilter();
-        /** System Defined Broadcast */
-        theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
+      final BatteryChargeListener batteryChargeListener) {
+    final IntentFilter theFilter = new IntentFilter();
+    /** System Defined Broadcast */
+    theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 
-        BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
+    BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
+      @Override public void onReceive(Context context, Intent intent) {
+        int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
 
-                if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
-                    // Is Charging
-                    batteryChargeListener.isCharging();
-                }
-                if (status == BatteryManager.BATTERY_STATUS_FULL) {
-                    // Is Full
-                    batteryChargeListener.isFull();
-                } else {
-                    // Is Discharging
-                    batteryChargeListener.isDiscahrging();
-                }
-            }
-        };
-        context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
-    }
+        if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
+          // Is Charging
+          batteryChargeListener.isCharging();
+        }
+        if (status == BatteryManager.BATTERY_STATUS_FULL) {
+          // Is Full
+          batteryChargeListener.isFull();
+        } else {
+          // Is Discharging
+          batteryChargeListener.isDiscahrging();
+        }
+      }
+    };
+    context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
+  }
 
     /**
      * The interface Battery charge listener.
@@ -64,5 +63,5 @@ public class BatteryUtils {
          * Is discahrging.
          */
         void isDiscahrging();
-    }
+  }
 }

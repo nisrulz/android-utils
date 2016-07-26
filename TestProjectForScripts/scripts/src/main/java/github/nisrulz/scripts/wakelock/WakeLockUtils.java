@@ -9,28 +9,28 @@ import android.os.PowerManager;
  * @author Nishant Srivastava
  */
 public class WakeLockUtils {
-    /**
-     * The Wake lock.
-     */
-    static PowerManager.WakeLock wakeLock;
+  /**
+   * The Wake lock.
+   */
+  private static PowerManager.WakeLock wakeLock;
 
-    /**
-     * Hold wake lock.
-     *
-     * @param context the context
-     */
-    public static void holdWakeLock(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyWakeLock");
-        wakeLock.acquire();
-    }
+  /**
+   * Hold wake lock.
+   *
+   * @param context the context
+   */
+  public static void holdWakeLock(Context context) {
+    PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+    wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyWakeLock");
+    wakeLock.acquire();
+  }
 
-    /**
-     * Release wake lock.
-     */
-    public static void releaseWakeLock() {
-        if (wakeLock != null && wakeLock.isHeld()) {
-            wakeLock.release();
-        }
+  /**
+   * Release wake lock.
+   */
+  public static void releaseWakeLock() {
+    if (wakeLock != null && wakeLock.isHeld()) {
+      wakeLock.release();
     }
+  }
 }

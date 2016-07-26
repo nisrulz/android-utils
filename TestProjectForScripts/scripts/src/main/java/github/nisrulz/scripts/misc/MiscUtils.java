@@ -57,7 +57,7 @@ public class MiscUtils {
    */
   public static void generateCsvFile(String sFileName, String data)
       throws IOException, JSONException {
-    JSONObject objectToWrite = new JSONObject(data.toString());
+    JSONObject objectToWrite = new JSONObject(data);
     File folder = new File(Environment.getExternalStorageDirectory() + "/Folder");
 
     boolean var = false;
@@ -79,14 +79,6 @@ public class MiscUtils {
       writer.append('\n');
       writer.flush();
       writer.close();
-    } catch (IOException e) {
-      writer.flush();
-      writer.close();
-      e.printStackTrace();
-    } catch (JSONException e) {
-      writer.flush();
-      writer.close();
-      e.printStackTrace();
     } catch (Exception e) {
       writer.flush();
       writer.close();

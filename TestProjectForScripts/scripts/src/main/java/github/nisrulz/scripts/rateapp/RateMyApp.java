@@ -56,7 +56,7 @@ public class RateMyApp {
       }
     }
 
-    editor.commit();
+    editor.apply();
   }
 
   /**

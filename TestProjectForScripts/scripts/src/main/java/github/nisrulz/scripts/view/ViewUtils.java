@@ -42,7 +42,9 @@ public class ViewUtils {
    */
   public static void setOrientation(Activity activity, boolean status) {
     if (status) {
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+      }
     } else {
       activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
     }
