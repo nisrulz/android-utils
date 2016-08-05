@@ -1,6 +1,11 @@
 # Android-Utils 
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz) 
+### Featured in
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) 
+
+### Show some :heart:
+[![GitHub stars](https://img.shields.io/github/stars/nisrulz/android-utils.svg?style=social&label=Star)](https://github.com/nisrulz/android-utils) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/android-utils.svg?style=social&label=Fork)](https://github.com/nisrulz/android-utils/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/android-utils.svg?style=social&label=Watch)](https://github.com/nisrulz/android-utils) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz/android-utils)  
+[![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz) 
 
 Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
