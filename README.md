@@ -1,6 +1,6 @@
 # Android-Utils 
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz) 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz) 
 
 Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
