@@ -1,11 +1,14 @@
 package github.nisrulz.scripts.view;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Build;
 import android.view.Display;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 /**
  * The type View utils.
@@ -48,5 +51,16 @@ public class ViewUtils {
     } else {
       activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
     }
+  }
+
+  /**
+   * Hide on screen keyboard for edit text.
+   *
+   * @param activity the activity
+   * @param editText the edit text
+   */
+  public static void hideOnScreenKeyboardForEditText(Activity activity, EditText editText) {
+    ((InputMethodManager) activity.getSystemService(
+        Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editText.getWindowToken(), 0);
   }
 }
