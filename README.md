@@ -1,7 +1,7 @@
 # Android-Utils 
 
 ### Featured in
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg)](https://www.androiddevdigest.com/digest-106/)
 
 ### Show some :heart:
 [![GitHub stars](https://img.shields.io/github/stars/nisrulz/android-utils.svg?style=social&label=Star)](https://github.com/nisrulz/android-utils) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/android-utils.svg?style=social&label=Fork)](https://github.com/nisrulz/android-utils/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/android-utils.svg?style=social&label=Watch)](https://github.com/nisrulz/android-utils) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz/android-utils)  
