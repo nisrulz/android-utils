@@ -111,6 +111,34 @@ public class ConvertUtils {
   }
 
   /**
+   * Sp to px
+   *
+   * @param context
+   *     the context
+   * @param sp
+   *     the sp
+   * @return the int
+   */
+  public static int spToPx(Context context, float sp) {
+    final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+    return (int) (sp * fontScale + 0.5f);
+  }
+
+  /**
+   * Px to sp
+   *
+   * @param context
+   *     the context
+   * @param px
+   *     the px
+   * @return the int
+   */
+  public static int pxToSp(Context context, float px) {
+    final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+    return (int) (px / fontScale + 0.5f);
+  }
+
+  /**
    * Convert HashMap<String,String> to key=value type String
    *
    * @param params
