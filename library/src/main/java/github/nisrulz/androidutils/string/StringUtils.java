@@ -13,7 +13,7 @@ public class StringUtils {
   }
 
   /**
-   * To title case string.
+   * Convert string to title case
    *
    * @param input
    *     the input
@@ -39,7 +39,7 @@ public class StringUtils {
   }
 
   /**
-   * Remove last char string.
+   * Remove the last specified character
    *
    * @param stringText
    *     the string text

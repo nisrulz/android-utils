@@ -16,7 +16,7 @@ public class ServiceUtils {
   }
 
   /**
-   * Check if Service is running or not
+   * Check if the service is running in the device.
    *
    * @param context
    *     the context

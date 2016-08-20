@@ -23,7 +23,7 @@ public class ViewUtil {
   }
 
   /**
-   * Get screen size int [ ].
+   * Get the screen dimensions
    *
    * @param activity
    *     the activity
@@ -45,7 +45,7 @@ public class ViewUtil {
   }
 
   /**
-   * Sets orientation.
+   * Set orientation change lock
    *
    * @param activity
    *     the activity
@@ -64,7 +64,7 @@ public class ViewUtil {
   }
 
   /**
-   * Hide on screen keyboard for edit text.
+   * Hide On Screen Keyboard for EditText
    *
    * @param activity
    *     the activity

@@ -21,7 +21,7 @@ public class JSONUtils {
   }
 
   /**
-   * Iterate over json hash map.
+   * Iterate over all keys of the JSON
    *
    * @param jsonObject
    *     the json object
@@ -43,7 +43,7 @@ public class JSONUtils {
   }
 
   /**
-   * Load json from asset folder in android
+   * Read and parse a JSON file stored in assets folder
    *
    * @param context
    *     the context

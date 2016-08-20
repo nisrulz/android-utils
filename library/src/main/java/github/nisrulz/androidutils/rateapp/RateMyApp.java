@@ -27,7 +27,7 @@ public class RateMyApp {
   }
 
   /**
-   * App launched.
+   * Launch Rate the app dialogue when the app is launched for the first time.
    *
    * @param mContext
    *     the m context
@@ -66,7 +66,7 @@ public class RateMyApp {
   }
 
   /**
-   * Show rate dialog.
+   * Launch Rate the app dialogue when the app is launched based of some random logic.
    *
    * @param mContext
    *     the m context

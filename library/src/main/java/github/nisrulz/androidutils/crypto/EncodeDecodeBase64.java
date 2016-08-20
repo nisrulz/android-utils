@@ -14,7 +14,7 @@ public class EncodeDecodeBase64 {
   }
 
   /**
-   * Encoded message string.
+   * Encode message using Base64 encoding
    *
    * @param message
    *     the message
@@ -25,7 +25,7 @@ public class EncodeDecodeBase64 {
   }
 
   /**
-   * Decoded message string.
+   * Decode encoded message using Base64
    *
    * @param message
    *     the message

@@ -15,7 +15,7 @@ public class MD5 {
   }
 
   /**
-   * Md 5 string.
+   * Get MD5 value for a string
    *
    * @param input
    *     the input

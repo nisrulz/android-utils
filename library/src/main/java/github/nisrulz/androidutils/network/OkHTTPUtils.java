@@ -20,7 +20,7 @@ public class OkHTTPUtils {
   }
 
   /**
-   * Save binary file from response.
+   * Save the response as a binary file i.e html file.
    *
    * @param context
    *     the context
