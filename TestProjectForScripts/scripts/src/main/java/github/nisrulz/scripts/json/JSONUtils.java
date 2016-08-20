@@ -15,10 +15,16 @@ import org.json.JSONObject;
  */
 public class JSONUtils {
 
+  private JSONUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Iterate over json hash map.
    *
-   * @param jsonObject the json object
+   * @param jsonObject
+   *     the json object
    * @return the hash map
    */
   public static HashMap<String, String> iterateOverJSON(JSONObject jsonObject) {
@@ -39,8 +45,10 @@ public class JSONUtils {
   /**
    * Load json from asset folder in android
    *
-   * @param context the context
-   * @param filename the filename
+   * @param context
+   *     the context
+   * @param filename
+   *     the filename
    * @return the json object
    */
   public JSONObject loadJSONFromAsset(Context context, String filename) {

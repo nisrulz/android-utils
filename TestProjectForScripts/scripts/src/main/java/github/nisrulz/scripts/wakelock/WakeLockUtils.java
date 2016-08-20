@@ -14,10 +14,16 @@ public class WakeLockUtils {
    */
   private static PowerManager.WakeLock wakeLock;
 
+  private WakeLockUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Hold wake lock.
    *
-   * @param context the context
+   * @param context
+   *     the context
    */
   public static void holdWakeLock(Context context) {
     PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);

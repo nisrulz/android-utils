@@ -15,12 +15,18 @@ import android.widget.EditText;
  *
  * @author Nishant Srivastava
  */
-public class ViewUtils {
+public class ViewUtil {
+
+  private ViewUtil() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
 
   /**
    * Get screen size int [ ].
    *
-   * @param activity the activity
+   * @param activity
+   *     the activity
    * @return the int [ ]
    */
   public static int[] getScreenSize(Activity activity) {
@@ -30,7 +36,8 @@ public class ViewUtils {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
       w.getDefaultDisplay().getSize(size);
       return new int[] { size.x, size.y };
-    } else {
+    }
+    else {
       Display d = w.getDefaultDisplay();
       //noinspection deprecation
       return new int[] { d.getWidth(), d.getHeight() };
@@ -40,15 +47,18 @@ public class ViewUtils {
   /**
    * Sets orientation.
    *
-   * @param activity the activity
-   * @param status the status
+   * @param activity
+   *     the activity
+   * @param status
+   *     the status
    */
   public static void setOrientation(Activity activity, boolean status) {
     if (status) {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
       }
-    } else {
+    }
+    else {
       activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
     }
   }
@@ -56,8 +66,10 @@ public class ViewUtils {
   /**
    * Hide on screen keyboard for edit text.
    *
-   * @param activity the activity
-   * @param editText the edit text
+   * @param activity
+   *     the activity
+   * @param editText
+   *     the edit text
    */
   public static void hideOnScreenKeyboardForEditText(Activity activity, EditText editText) {
     ((InputMethodManager) activity.getSystemService(

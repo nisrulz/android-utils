@@ -13,20 +13,28 @@ import android.os.BatteryManager;
  */
 public class BatteryUtils {
 
-    /**
-     * Register battery change broadcast receiver.
-     *
-     * @param context the context
-     * @param batteryChargeListener the battery charge listener
-     */
-    public static void registerBatteryChangeBroadcastReceiver(Context context,
+  private BatteryUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
+  /**
+   * Register battery change broadcast receiver.
+   *
+   * @param context
+   *     the context
+   * @param batteryChargeListener
+   *     the battery charge listener
+   */
+  public static void registerBatteryChangeBroadcastReceiver(Context context,
       final BatteryChargeListener batteryChargeListener) {
     final IntentFilter theFilter = new IntentFilter();
     /** System Defined Broadcast */
     theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 
     BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
-      @Override public void onReceive(Context context, Intent intent) {
+      @Override
+      public void onReceive(Context context, Intent intent) {
         int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
 
         if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
@@ -36,7 +44,8 @@ public class BatteryUtils {
         if (status == BatteryManager.BATTERY_STATUS_FULL) {
           // Is Full
           batteryChargeListener.isFull();
-        } else {
+        }
+        else {
           // Is Discharging
           batteryChargeListener.isDiscahrging();
         }
@@ -45,23 +54,23 @@ public class BatteryUtils {
     context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
   }
 
+  /**
+   * The interface Battery charge listener.
+   */
+  public interface BatteryChargeListener {
     /**
-     * The interface Battery charge listener.
+     * Is charging.
      */
-    public interface BatteryChargeListener {
-        /**
-         * Is charging.
-         */
-        void isCharging();
+    void isCharging();
 
-        /**
-         * Is full.
-         */
-        void isFull();
+    /**
+     * Is full.
+     */
+    void isFull();
 
-        /**
-         * Is discahrging.
-         */
-        void isDiscahrging();
+    /**
+     * Is discahrging.
+     */
+    void isDiscahrging();
   }
 }

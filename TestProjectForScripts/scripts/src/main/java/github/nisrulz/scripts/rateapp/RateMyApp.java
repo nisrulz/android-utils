@@ -21,10 +21,16 @@ public class RateMyApp {
   private final static int DAYS_UNTIL_PROMPT = 3;
   private final static int LAUNCHES_UNTIL_PROMPT = 7;
 
+  private RateMyApp() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * App launched.
    *
-   * @param mContext the m context
+   * @param mContext
+   *     the m context
    */
   public static void app_launched(Context mContext) {
     SharedPreferences prefs = mContext.getSharedPreferences("apprater", 0);
@@ -62,8 +68,10 @@ public class RateMyApp {
   /**
    * Show rate dialog.
    *
-   * @param mContext the m context
-   * @param editor the editor
+   * @param mContext
+   *     the m context
+   * @param editor
+   *     the editor
    */
   public static void showRateDialog(final Context mContext, final SharedPreferences.Editor editor) {
     final Dialog dialog = new Dialog(mContext);

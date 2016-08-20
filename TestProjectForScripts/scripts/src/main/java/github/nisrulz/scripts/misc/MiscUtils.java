@@ -25,11 +25,18 @@ import static android.view.WindowManager.LayoutParams;
  */
 public class MiscUtils {
 
+  private MiscUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Gets random number in range.
    *
-   * @param min the min
-   * @param max the max
+   * @param min
+   *     the min
+   * @param max
+   *     the max
    * @return the random number in range
    */
   public static int getRandomNumberInRange(int min, int max) {
@@ -39,8 +46,10 @@ public class MiscUtils {
   /**
    * Check if permission granted boolean.
    *
-   * @param context the context
-   * @param permission the permission
+   * @param context
+   *     the context
+   * @param permission
+   *     the permission
    * @return the boolean
    */
   public static boolean checkIfPermissionGranted(Context context, String permission) {
@@ -50,10 +59,14 @@ public class MiscUtils {
   /**
    * Write String data to a csv file
    *
-   * @param sFileName the s file name
-   * @param data the data
-   * @throws IOException the io exception
-   * @throws JSONException the json exception
+   * @param sFileName
+   *     the s file name
+   * @param data
+   *     the data
+   * @throws IOException
+   *     the io exception
+   * @throws JSONException
+   *     the json exception
    */
   public static void generateCsvFile(String sFileName, String data)
       throws IOException, JSONException {
@@ -61,7 +74,9 @@ public class MiscUtils {
     File folder = new File(Environment.getExternalStorageDirectory() + "/Folder");
 
     boolean var = false;
-    if (!folder.exists()) var = folder.mkdir();
+    if (!folder.exists()) {
+      var = folder.mkdir();
+    }
 
     System.out.println("" + var);
 
@@ -89,7 +104,8 @@ public class MiscUtils {
   /**
    * Rate my app.
    *
-   * @param context the context
+   * @param context
+   *     the context
    */
   public static void rateMyApp(Context context) {
 
@@ -107,7 +123,8 @@ public class MiscUtils {
           Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName()));
       if (i.resolveActivity(context.getPackageManager()) != null) {
         context.startActivity(i);
-      } else {
+      }
+      else {
         Toast.makeText(context, "Playstore Unavailable", Toast.LENGTH_SHORT).show();
       }
     }
@@ -116,9 +133,12 @@ public class MiscUtils {
   /**
    * Share my app.
    *
-   * @param context the context
-   * @param subject the subject
-   * @param message the message
+   * @param context
+   *     the context
+   * @param subject
+   *     the subject
+   * @param message
+   *     the message
    */
   public static void shareMyApp(Context context, String subject, String message) {
     try {
@@ -138,10 +158,14 @@ public class MiscUtils {
   /**
    * Send mail.
    *
-   * @param context the context
-   * @param mailtoid the mailtoid
-   * @param subject the subject
-   * @param body the body
+   * @param context
+   *     the context
+   * @param mailtoid
+   *     the mailtoid
+   * @param subject
+   *     the subject
+   * @param body
+   *     the body
    */
   public static void sendMail(Context context, String mailtoid, String subject, String body) {
     Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", mailtoid, null));
@@ -153,7 +177,8 @@ public class MiscUtils {
   /**
    * Enable strict mode.
    *
-   * @param enable the enable flag
+   * @param enable
+   *     the enable flag
    */
   public static void enableStrictMode(boolean enable) {
     if (enable) {
@@ -175,7 +200,8 @@ public class MiscUtils {
   /**
    * Disable screenshot functionality.
    *
-   * @param activity the activity
+   * @param activity
+   *     the activity
    */
   public static void disableScreenshotFunctionality(Activity activity) {
     activity.getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
