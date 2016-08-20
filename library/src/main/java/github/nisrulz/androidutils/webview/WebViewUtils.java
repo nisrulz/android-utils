@@ -1,5 +1,6 @@
 package github.nisrulz.androidutils.webview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.webkit.CookieManager;
@@ -25,6 +26,7 @@ public class WebViewUtils {
    * @param enabled
    *     the enabled
    */
+  @SuppressLint("SetJavaScriptEnabled")
   public static void enableJavaScript(WebView webView, boolean enabled) {
     if (webView != null) {
       webView.getSettings().setJavaScriptEnabled(enabled);

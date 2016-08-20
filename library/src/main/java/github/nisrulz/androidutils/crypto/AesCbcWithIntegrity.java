@@ -845,7 +845,7 @@ public class AesCbcWithIntegrity {
           }
         }
 
-        SecureRandom rng2 = null;
+        SecureRandom rng2;
         try {
           rng2 = SecureRandom.getInstance("SHA1PRNG");
         } catch (NoSuchAlgorithmException e) {
@@ -866,7 +866,6 @@ public class AesCbcWithIntegrity {
                 "SecureRandom.getInstance(\"SHA1PRNG\") backed by wrong"
                     + " Provider: "
                     + rng2.getProvider().getClass());
-            return;
           }
           else {
             throw new SecurityException("SecureRandom.getInstance(\"SHA1PRNG\") backed by wrong"

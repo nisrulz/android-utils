@@ -9,7 +9,7 @@ import android.content.Context;
  */
 public class SharedPrefUtils {
 
-  private static String PREF_APP = "pref_app";
+  private static final String PREF_APP = "pref_app";
 
   private SharedPrefUtils() {
     throw new UnsupportedOperationException(
