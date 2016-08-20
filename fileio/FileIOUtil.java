@@ -14,12 +14,20 @@ import java.util.HashMap;
  */
 public class FileIOUtil {
 
+  private FileIOUtil() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Save hash map to file.
    *
-   * @param context the context
-   * @param fileName the file name
-   * @param h the h
+   * @param context
+   *     the context
+   * @param fileName
+   *     the file name
+   * @param h
+   *     the h
    */
   public static void saveHashMapToFile(Context context, String fileName,
       HashMap<String, String> h) {
@@ -42,8 +50,10 @@ public class FileIOUtil {
   /**
    * Load hash map from file hash map.
    *
-   * @param context the context
-   * @param fileName the file name
+   * @param context
+   *     the context
+   * @param fileName
+   *     the file name
    * @return the hash map
    */
   public static HashMap<String, String> loadHashMapFromFile(Context context, String fileName) {
@@ -58,7 +68,8 @@ public class FileIOUtil {
         objISt.close();
         System.out.println(h.get("c"));
         return h;
-      } else {
+      }
+      else {
         System.out.println("FILE DOESNOT EXIST !!");
       }
     } catch (IOException | ClassNotFoundException e) {

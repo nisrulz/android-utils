@@ -18,13 +18,15 @@ import java.util.List;
 public class ConvertUtils {
 
   private ConvertUtils() {
-
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
   }
 
   /**
    * short array to byte array.
    *
-   * @param sData the s data
+   * @param sData
+   *     the s data
    * @return the byte []
    */
   public static byte[] short2byte(short[] sData) {
@@ -47,8 +49,10 @@ public class ConvertUtils {
    * <p/>
    * Inspired from SO answer: http://stackoverflow.com/a/26318757/1446466
    *
-   * @param context the context
-   * @param implicitIntent - The original implicit intent
+   * @param context
+   *     the context
+   * @param implicitIntent
+   *     - The original implicit intent
    * @return Explicit Intent created from the implicit original intent
    */
   public static Intent implicit2ExplicitIntent(Context context, Intent implicitIntent) {
@@ -79,8 +83,10 @@ public class ConvertUtils {
   /**
    * Dp to pixels
    *
-   * @param context the context
-   * @param dp the dp
+   * @param context
+   *     the context
+   * @param dp
+   *     the dp
    * @return the int
    */
   public static int dpToPixels(Activity context, int dp) {
@@ -92,8 +98,10 @@ public class ConvertUtils {
   /**
    * Pixels to dp int.
    *
-   * @param context the context
-   * @param px the px
+   * @param context
+   *     the context
+   * @param px
+   *     the px
    * @return the int
    */
   public static int pixelsToDp(Activity context, int px) {
@@ -105,7 +113,8 @@ public class ConvertUtils {
   /**
    * Convert HashMap<String,String> to key=value type String
    *
-   * @param params the params
+   * @param params
+   *     the params
    * @return the string
    */
   public static String hashMap2String(HashMap<String, String> params) {
@@ -120,7 +129,8 @@ public class ConvertUtils {
   /**
    * Convert key=value type String to HashMap<String,String>
    *
-   * @param paramString the param string
+   * @param paramString
+   *     the param string
    * @return hash map
    */
   public static HashMap<String, String> string2HashMap(String paramString) {

@@ -15,7 +15,8 @@ public class MyFragment extends Fragment {
    * initializes the fragment's arguments, and returns the
    * new fragment to the client.
    *
-   * @param index the index
+   * @param index
+   *     the index
    * @return the my fragment
    */
   public static MyFragment newInstance(int index) {

@@ -4,6 +4,8 @@
 
 + `setOrientation(Activity activity, boolean status)` - Set orientation change lock
 
++ `hideOnScreenKeyboardForEditText(Activity activity, EditText editText)` - Hide On Screen Keyboard for EditText`
+
 License
 =======
 

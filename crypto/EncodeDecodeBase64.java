@@ -8,10 +8,16 @@ import java.util.Arrays;
  */
 public class EncodeDecodeBase64 {
 
+  private EncodeDecodeBase64() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Encoded message string.
    *
-   * @param message the message
+   * @param message
+   *     the message
    * @return the string
    */
   public static String encodedMessage(String message) {
@@ -21,7 +27,8 @@ public class EncodeDecodeBase64 {
   /**
    * Decoded message string.
    *
-   * @param message the message
+   * @param message
+   *     the message
    * @return the string
    */
   public static String decodedMessage(String message) {

@@ -10,11 +10,18 @@ import android.content.Context;
  */
 public class ServiceUtils {
 
+  private ServiceUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Check if Service is running or not
    *
-   * @param context the context
-   * @param serviceClass the service class
+   * @param context
+   *     the context
+   * @param serviceClass
+   *     the service class
    * @return boolean boolean
    */
   public static boolean isServiceRunning(Context context, Class<?> serviceClass) {

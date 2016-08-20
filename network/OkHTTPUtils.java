@@ -14,13 +14,22 @@ import okio.Okio;
  */
 public class OkHTTPUtils {
 
+  private OkHTTPUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * Save binary file from response.
    *
-   * @param context the context
-   * @param filename the filename
-   * @param response the response
-   * @throws IOException the io exception
+   * @param context
+   *     the context
+   * @param filename
+   *     the filename
+   * @param response
+   *     the response
+   * @throws IOException
+   *     the io exception
    */
   public static void saveBinaryFileFromResponse(Context context, String filename, Response response)
       throws IOException {

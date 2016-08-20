@@ -6,10 +6,17 @@ package github.nisrulz.scripts.string;
  * @author Nishant Srivastava
  */
 public class StringUtils {
+
+  private StringUtils() {
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
+  }
+
   /**
    * To title case string.
    *
-   * @param input the input
+   * @param input
+   *     the input
    * @return the string
    */
   public static String toTitleCase(String input) {
@@ -19,7 +26,8 @@ public class StringUtils {
     for (char c : input.toCharArray()) {
       if (Character.isSpaceChar(c)) {
         nextTitleCase = true;
-      } else if (nextTitleCase) {
+      }
+      else if (nextTitleCase) {
         c = Character.toTitleCase(c);
         nextTitleCase = false;
       }
@@ -33,8 +41,10 @@ public class StringUtils {
   /**
    * Remove last char string.
    *
-   * @param stringText the string text
-   * @param endingChar the ending char
+   * @param stringText
+   *     the string text
+   * @param endingChar
+   *     the ending char
    * @return the string
    */
   public static String removeLastChar(String stringText, String endingChar) {

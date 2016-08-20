@@ -11,13 +11,15 @@ import android.view.WindowManager;
 public class ActivityUtils {
 
   private ActivityUtils() {
-
+    throw new UnsupportedOperationException(
+        "Should not create instance of Util class. Please use as static..");
   }
 
   /**
    * Sets full screen.
    *
-   * @param activity the activity
+   * @param activity
+   *     the activity
    */
   public static void setFullScreen(Activity activity) {
     // Call before calling setContentView();
@@ -29,7 +31,8 @@ public class ActivityUtils {
   /**
    * Hide action bar.
    *
-   * @param activity the activity
+   * @param activity
+   *     the activity
    */
   public static void hideActionBar(Activity activity) {
     // Call before calling setContentView();
