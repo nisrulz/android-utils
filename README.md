@@ -1,11 +1,15 @@
 # Android-Utils
 
+### Specs
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils) [![Javadocs](https://javadoc.io/badge/com.github.nisrulz/android-utils.svg?color=orange)](https://javadoc.io/doc/com.github.nisrulz/android-utils) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
+
 ### Featured in
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg)](https://www.androiddevdigest.com/digest-106/)
 
 ### Show some :heart:
 [![GitHub stars](https://img.shields.io/github/stars/nisrulz/android-utils.svg?style=social&label=Star)](https://github.com/nisrulz/android-utils) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/android-utils.svg?style=social&label=Fork)](https://github.com/nisrulz/android-utils/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/android-utils.svg?style=social&label=Watch)](https://github.com/nisrulz/android-utils) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz/android-utils)  
 [![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz)
+
 
 Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
@@ -27,6 +31,15 @@ Repository consisting of utility scripts/classes/packages which you can import/d
 + [view](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/view/ViewUtil.java)
 + [wakelock](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/wakelock/WakeLockUtils.java)
 + [webview](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/webview/WebViewUtils.java)
+
+
+# Including in your project
+Android-Utils is available in the MavenCentral, so getting it as simple as adding it as a dependency
+```gradle
+compile 'com.github.nisrulz:android-utils:{latest version}'
+```
+where `{latest version}` corresponds to published version in [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils)
+
 
 License
 =======
