@@ -40,6 +40,17 @@ compile 'com.github.nisrulz:android-utils:{latest version}'
 ```
 where `{latest version}` corresponds to published version in [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils)
 
+# Pull Requests
+I welcome and encourage all pull requests. It usually will take me within 24-48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
+  1. Match coding style (braces, spacing, etc.) This is best achieved using `CMD`+`Option`+`L` (Reformat code) on Mac (not sure for Windows) with Android Studio defaults.
+  2. If its a feature, bugfix, or anything please only change code to what you specify.
+  3. Please keep PR titles easy to read and descriptive of changes, this will make them easier to merge :)
+  4. Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
+  5. Check for existing [issues](https://github.com/nisrulz/android-utils/issues) first, before filing an issue.
+  6. Have fun!
+
+### Created & Maintained By
+[Nishant Srivastava](https://github.com/nisrulz) ([@nisrulz](https://www.twitter.com/nisrulz))
 
 License
 =======
