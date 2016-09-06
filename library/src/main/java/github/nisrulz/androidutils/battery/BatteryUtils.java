@@ -11,12 +11,7 @@ import android.os.BatteryManager;
  *
  * @author Nishant Srivastava
  */
-public class BatteryUtils {
-
-  private BatteryUtils() {
-    throw new UnsupportedOperationException(
-        "Should not create instance of Util class. Please use as static..");
-  }
+public abstract class BatteryUtils {
 
   /**
    * Register a listener for getting updates of device charging, discharging or completely charged.
