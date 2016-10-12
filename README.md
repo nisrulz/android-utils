@@ -1,7 +1,7 @@
 # Android-Utils
 
 ### Specs
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils) [![Javadocs](https://javadoc.io/badge/com.github.nisrulz/android-utils.svg?color=orange)](https://javadoc.io/doc/com.github.nisrulz/android-utils) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
 
 ### Featured in
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg)](https://www.androiddevdigest.com/digest-106/)
