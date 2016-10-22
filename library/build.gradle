@@ -1,9 +1,5 @@
 apply plugin: 'com.android.library'
 
-// Uncomment below while publishing to maven central
-//apply from: 'https://raw.github.com/nisrulz/gradle-mvn-push/master/gradle-mvn-push.gradle'
-
-
 android {
   compileSdkVersion 25
   buildToolsVersion "24.0.3"
@@ -39,14 +35,38 @@ dependencies {
   provided 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 }
 
+// Bintray info
+def LIB_MODULE_NAME = 'android-utils'
+def LIB_MODULE_DESC = 'Android library facilitating some very common functionalities in the form of utility classes.'
+def GITHUB_LINK = "https://github.com/nisrulz/android-utils"
+def GITHUB_REPO = "nisrulz/android-utils"
 
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'com.github.nisrulz:android-utils'
 
-// Place this in the 'build.gradle' of the library module
-// Task : Generate a JAR
-// Usage : In the terminal, run './gradlew jar'
-// Output : Get the jar at 'build/libs'
+  publishedGroupId = GROUP
+  libraryName = LIB_MODULE_NAME
+  artifact = LIB_MODULE_NAME // Has to be same as your library module name
 
-task jar(type: Jar, dependsOn: 'assembleRelease') {
-  from fileTree(dir: 'build/intermediates/classes/release')
+  libraryDescription = LIB_MODULE_DESC
+
+  // Your github repo link
+  siteUrl = GITHUB_LINK
+  gitUrl = GITHUB_LINK + ".git"
+  githubRepository = GITHUB_REPO
+
+  libraryVersion = VERSION_NAME
+
+  developerId = POM_DEVELOPER_ID
+  developerName = POM_DEVELOPER_NAME
+  developerEmail = POM_DEVELOPER_EMAILID
+
+  licenseName = POM_LICENCE_NAME
+  licenseUrl = POM_LICENCE_URL
+  allLicenses = [POM_ALL_LICENCES]
 }
 
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
