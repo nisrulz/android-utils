@@ -1,7 +1,7 @@
 # Android-Utils
 
 ### Specs
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
 
 ### Featured in
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg)](https://www.androiddevdigest.com/digest-106/)
@@ -34,11 +34,11 @@ Repository consisting of utility scripts/classes/packages which you can import/d
 
 
 # Including in your project
-Android-Utils is available in the MavenCentral, so getting it as simple as adding it as a dependency
+Android-Utils is available in the Jcenter, so getting it as simple as adding it as a dependency
 ```gradle
 compile 'com.github.nisrulz:android-utils:{latest version}'
 ```
-where `{latest version}` corresponds to published version in [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/android-utils)
+where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion)
 
 # Pull Requests
 I welcome and encourage all pull requests. It usually will take me within 24-48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
