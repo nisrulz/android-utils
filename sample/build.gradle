@@ -35,7 +35,7 @@ dependencies {
 
 //  compile 'com.github.nisrulz:android-utils:1.0.0'
 
-  compile project(':library')
+  compile project(':android-utils')
 
 
 }
