@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
   compileSdkVersion 25
-  buildToolsVersion "24.0.3"
+  buildToolsVersion "25.0.0"
 
   defaultConfig {
     applicationId "github.nisrulz.sampleandroidutils"
@@ -27,11 +27,11 @@ android {
 dependencies {
   compile fileTree(include: ['*.jar'], dir: 'libs')
   testCompile 'junit:junit:4.12'
-  compile 'com.android.support:appcompat-v7:25.0.0'
+  compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
 
   // OkHTTPUtils
-  compile 'com.squareup.okhttp3:okhttp:3.4.1'
-  compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+  compile "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
+  compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
 
 //  compile 'com.github.nisrulz:android-utils:1.0.0'
 

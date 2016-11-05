@@ -25,3 +25,21 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+// Library Info
+ext {
+  //Other
+  supportLibVersion = '25.0.0'
+  okhttpVer = '3.4.2'
+
+  // PackageHunter
+  libVersionCode = 3
+  libVersionName = '1.0.2'
+  libPomUrl = 'https://github.com/nisrulz/android-utils'
+  libGithubRepo = 'nisrulz/android-utils'
+
+
+  libModuleName = 'android-utils'
+  libModuleDesc = 'Android library facilitating some very common functionalities in the form of utility classes.'
+  libBintrayName = 'com.github.nisrulz:android-utils'
+}
