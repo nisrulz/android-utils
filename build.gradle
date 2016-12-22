@@ -5,13 +5,13 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.2'
+    classpath 'com.android.tools.build:gradle:2.2.3'
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
 
     // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
   }
 }
@@ -26,18 +26,16 @@ task clean(type: Delete) {
   delete rootProject.buildDir
 }
 
-// Library Info
 ext {
   //Other
-  supportLibVersion = '25.0.0'
-  okhttpVer = '3.4.2'
+  supportLibVersion = '25.1.0'
+  okhttpVer = '3.5.0'
 
-  // PackageHunter
-  libVersionCode = 3
-  libVersionName = '1.0.2'
+  // Library Info
+  libVersionCode = 4
+  libVersionName = '1.0.3'
   libPomUrl = 'https://github.com/nisrulz/android-utils'
   libGithubRepo = 'nisrulz/android-utils'
-
 
   libModuleName = 'android-utils'
   libModuleDesc = 'Android library facilitating some very common functionalities in the form of utility classes.'
