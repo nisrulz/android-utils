@@ -1,13 +1,26 @@
 package github.nisrulz.androidutils.network;
 
+/**
+ * The type Http response util.
+ */
 public class HTTPResponseUtil {
 
-  private HTTPResponseInfo httpResponseInfo;
+  private final HTTPResponseInfo httpResponseInfo;
 
+  /**
+   * Instantiates a new Http response util.
+   */
   public HTTPResponseUtil() {
     this.httpResponseInfo = new HTTPResponseInfo();
   }
 
+  /**
+   * Gets info.
+   *
+   * @param statusCode
+   *     the status code
+   * @return the info
+   */
   public HTTPResponseInfo getInfo(int statusCode) {
     /* Http Code data reference from : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status */
     httpResponseInfo.setStatusCode(statusCode);
@@ -207,7 +220,7 @@ public class HTTPResponseUtil {
         httpResponseInfo.setType("Client Error Response");
         httpResponseInfo.setStatusText("Request Timeout");
         httpResponseInfo.setStatusDescription(
-            "This response is sent on an idle connection by some servers, even without any previous request by the client. It means that the server would like to shut down this unused connection. This response is used much more since some browsers, like Chrome or IE9, use HTTP preconnection mechanisms to speed up surfing (see bug 881804, which tracks the future implementation of such a mechanism in Firefox). Also note that some servers merely shut down the connection without sending this message");
+            "This response is sent on an idle connection by some servers, even without any previous request by the client. It means that the server would like to shut down this unused connection. This response is used much more since some browsers, like Chrome or IE9, use HTTP pre connection mechanisms to speed up surfing (see bug 881804, which tracks the future implementation of such a mechanism in Firefox). Also note that some servers merely shut down the connection without sending this message");
         break;
       }
       case 409: {
@@ -382,7 +395,7 @@ public class HTTPResponseUtil {
       }
 
       default:
-        // Donot set anything
+        // Do not set anything
         break;
     }
 
