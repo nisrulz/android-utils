@@ -29,11 +29,11 @@ task clean(type: Delete) {
 ext {
   //Other
   supportLibVersion = '25.1.0'
-  okhttpVer = '3.5.0'
+  okhttpVer = '3.6.0'
 
   // Library Info
-  libVersionCode = 4
-  libVersionName = '1.0.3'
+  libVersionCode = 5
+  libVersionName = '1.0.4'
   libPomUrl = 'https://github.com/nisrulz/android-utils'
   libGithubRepo = 'nisrulz/android-utils'
 
