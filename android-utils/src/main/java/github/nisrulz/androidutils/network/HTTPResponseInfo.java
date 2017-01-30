@@ -17,7 +17,7 @@ public class HTTPResponseInfo {
     return statusCode;
   }
 
-  public void setStatusCode(int statusCode) {
+  void setStatusCode(int statusCode) {
     this.statusCode = statusCode;
   }
 
@@ -25,7 +25,7 @@ public class HTTPResponseInfo {
     return statusText;
   }
 
-  public void setStatusText(String statusText) {
+  void setStatusText(String statusText) {
     this.statusText = statusText;
   }
 
@@ -33,7 +33,7 @@ public class HTTPResponseInfo {
     return statusDescription;
   }
 
-  public void setStatusDescription(String statusDescription) {
+  void setStatusDescription(String statusDescription) {
     this.statusDescription = statusDescription;
   }
 
@@ -41,7 +41,7 @@ public class HTTPResponseInfo {
     return type;
   }
 
-  public void setType(String type) {
+  void setType(String type) {
     this.type = type;
   }
 }
