@@ -1,15 +1,23 @@
 package github.nisrulz.androidutils.network;
 
+import github.nisrulz.androidutils.BuildConfig;
 import github.nisrulz.androidutils.misc.MiscUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
+
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class)
 public class HTTPResponseUtilTest {
 
   HTTPResponseUtil httpResponseUtil;
   HTTPResponseInfo httpResponseInfo;
+  
 
   @Before
   public void setUp() throws Exception {
