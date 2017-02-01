@@ -28,7 +28,7 @@ task clean(type: Delete) {
 
 ext {
   //Other
-  supportLibVersion = '25.1.0'
+  supportLibVersion = '25.1.1'
   okhttpVer = '3.6.0'
 
   // Library Info
