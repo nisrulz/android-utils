@@ -25,11 +25,11 @@ public class AudioUtils {
    */
   public static int getValidSampleRates(int channelConfiguration, int audioEncoding) {
     for (int rate : new int[] {
-        8000, 11025, 16000, 22050, 44100
+        8000, 11025, 16000, 22050, 44100, 48000
     }) {  // add the rates you wish to check against
-      int bffrSize = AudioRecord.getMinBufferSize(rate, channelConfiguration, audioEncoding);
-      if (bffrSize > 0) {
-        return bffrSize;
+      int bufferSize = AudioRecord.getMinBufferSize(rate, channelConfiguration, audioEncoding);
+      if (bufferSize > 0) {
+        return rate;
       }
     }
     return 0;
@@ -48,15 +48,15 @@ public class AudioUtils {
    *     the audio encoding
    * @return the int
    */
-  public static int checkCorrectBufferSize(int audioSource, int fs, int channelConfiguration,
+  public static int getValidBufferSize(int audioSource, int fs, int channelConfiguration,
       int audioEncoding) {
-    for (int buffer : new int[] {
+    for (int bufferSize : new int[] {
         256, 512, 1024, 2048, 4096
     }) {  // add the rates you wish to check against
       AudioRecord audioRecordTemp =
-          new AudioRecord(audioSource, fs, channelConfiguration, audioEncoding, buffer);
+          new AudioRecord(audioSource, fs, channelConfiguration, audioEncoding, bufferSize);
       if (audioRecordTemp != null && audioRecordTemp.getState() == AudioRecord.STATE_INITIALIZED) {
-        return buffer;
+        return bufferSize;
       }
     }
     return 0;
