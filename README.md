@@ -14,7 +14,7 @@
 Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
 + [activity](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/activity/ActivityUtils.java)
-+ [audio](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/audio/AudioUtils.java)
++ [audio](/android-utils/src/main/java/github/nisrulz/androidutils/audio/AudioUtils.java)
 + [battery](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/battery/BatteryUtils.java)
 + [broadcastreceiver](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/broadcastreceiver/BroadcastReceiverUtils.java)
 + [convert](https://github.com/nisrulz/android-utils/tree/master/library/src/main/java/github/nisrulz/androidutils/convert/ConvertUtils.java)
