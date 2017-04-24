@@ -51,6 +51,4 @@ dependencies {
 
   // compile 'com.github.nisrulz:android-utils:1.0.3'
   compile project(':android-utils')
-
-
 }

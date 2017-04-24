@@ -16,7 +16,6 @@
 
 package github.nisrulz.androidutils.crypto;
 
-
 import android.os.Build;
 import android.os.Process;
 import android.util.Base64;

@@ -129,9 +129,9 @@ public class MiscUtils {
     Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
     // To count with Play market backstack, After pressing back button,
     // to taken back to our application, we need to add following flags to intent.
-    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
-        Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
-        Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY
+        | Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+        | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
     try {
       context.startActivity(goToMarket);
     } catch (ActivityNotFoundException e) {
