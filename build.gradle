@@ -51,8 +51,8 @@ ext {
   targetSdkVersion = 26
   minSdkVersion = 14
   compileSdkVersion = targetSdkVersion
-  buildToolsVersion = '26.0.0-rc2'
-  supportLibVersion = '26.0.0-beta2'
+  buildToolsVersion = '26.0.0'
+  supportLibVersion = '26.0.0'
 
   okhttpVer = '3.8.0'
 
