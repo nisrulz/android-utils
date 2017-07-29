@@ -55,8 +55,8 @@ ext {
   okhttpVer = '3.8.1'
 
   // Library Info
-  libVersionCode = 6
-  libVersionName = '1.0.5'
+  libVersionCode = 7
+  libVersionName = '1.0.6'
   libPomUrl = 'https://github.com/nisrulz/android-utils'
   libGithubRepo = 'nisrulz/android-utils'
 
