@@ -105,7 +105,7 @@ I welcome and encourage all pull requests. It usually will take me within 24-48 
   6. Have fun!
 
 ## License
-Licensed under the Apache License, Version 2.0, [click here for the full license](/License.txt).
+Licensed under the Apache License, Version 2.0, [click here for the full license](/LICENSE.txt).
 
 ## Author & support
 This project was created by [Nishant Srivastava](https://github.com/nisrulz/nisrulz.github.io#nishant-srivastava) but hopefully developed and maintained by many others. See the [the list of contributors here](https://github.com/nisrulz/ShoutOut/graphs/contributors).
