@@ -1,17 +1,79 @@
-# Android-Utils
+<h1 align="center">Android-Utils&nbsp;<a href="https://twitter.com/intent/tweet?text=Checkout%20Android-Utils%3A%20Android%20Library%20facilitating%20some%20very%20common%20functionalities%20in%20the%20form%20of%20utility%20classes%20for%20Android&url=https://github.com/nisrulz/android-utils&via=nisrulz&hashtags=AndroidDev,android,library,OpenSource">
+        <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"/>
+    </a></h1>
 
-### Specs
-[ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion) [![API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=9)
+<div align="center">
+  <strong>Android Library facilitating some very common functionalities in the form of utility classes for Android</strong>
+</div>
+<br/>
+<div align="center">
+    <!-- Bintray -->
+    <a href="https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion">
+        <img src="https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg"/>
+    </a>
+    <!-- API -->
+    <a href="https://android-arsenal.com/api?level=14">
+        <img src="https://img.shields.io/badge/API-14%2B-orange.svg?style=flat"/>
+    </a>
+    <!-- Circle CI -->
+    <a href="https://circleci.com/gh/nisrulz/android-utils/tree/master">
+        <img src="https://circleci.com/gh/nisrulz/android-utils.svg?style=svg"/>
+    </a>
+    <!-- Android Arsenal -->
+    <a href="https://android-arsenal.com/details/1/4068">
+        <img src="https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true"/>
+    </a>
+    <!-- Android Dev Digest -->
+    <a href="https://www.androiddevdigest.com/digest-106/">
+        <img src="https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg"/>
+    </a>
+    <!-- GitHub stars -->
+    <a href="https://github.com/nisrulz/android-utils">
+        <img src="https://img.shields.io/github/stars/nisrulz/android-utils.svg?style=social&label=Star"/>
+    </a>
+    <!-- GitHub forks -->
+    <a href="https://github.com/nisrulz/android-utils/fork">
+        <img src="hhttps://img.shields.io/github/forks/nisrulz/android-utils.svg?style=social&label=Fork"/>
+    </a>
+    <!-- GitHub watchers -->
+    <a href="https://github.com/nisrulz/android-utils">
+        <img src="https://img.shields.io/github/watchers/nisrulz/android-utils.svg?style=social&label=Watch"/>
+    </a>
+    <!-- Say Thanks! -->
+    <a href="https://saythanks.io/to/nisrulz">
+        <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"/>
+    </a>
+    <a href="https://www.paypal.me/nisrulz/5">
+        <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
+    </a>
+    <br/>
+     <!-- GitHub followers -->
+    <a href="https://github.com/nisrulz/android-utils">
+        <img src="https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow%20@nisrulz"/>
+    </a>
+    <!-- Twitter Follow -->
+    <a href="https://twitter.com/nisrulz">
+        <img src="https://img.shields.io/twitter/follow/nisrulz.svg?style=social"/>
+    </a>
+</div>
 
-### Featured in
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true)](https://android-arsenal.com/details/1/4068) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23106-blue.svg)](https://www.androiddevdigest.com/digest-106/)
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://twitter.com/nisrulz">Nishant Srivastava</a> and
+  <a href="https://github.com/nisrulz/android-utils/graphs/contributors">
+    contributors
+  </a>
+</div>
+<br/>
+<br/>
 
-### Show some :heart:
-[![GitHub stars](https://img.shields.io/github/stars/nisrulz/android-utils.svg?style=social&label=Star)](https://github.com/nisrulz/android-utils) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/android-utils.svg?style=social&label=Fork)](https://github.com/nisrulz/android-utils/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/android-utils.svg?style=social&label=Watch)](https://github.com/nisrulz/android-utils) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz/android-utils)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/nisrulz.svg?style=social)](https://twitter.com/nisrulz)
+# Including in your project
+Android-Utils is available in the Jcenter, so getting it as simple as adding it as a dependency
+```gradle
+implementation 'com.github.nisrulz:android-utils:{latest version}'
+```
+where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion)
 
-
-Repository consisting of utility scripts/classes/packages which you can import/download/copy-paste as it is to get the desired functionality/solution.
 
 + [activity](/android-utils/src/main/java/github/nisrulz/androidutils/activity/ActivityUtils.java)
 + [audio](/android-utils/src/main/java/github/nisrulz/androidutils/audio/AudioUtils.java)
@@ -32,41 +94,25 @@ Repository consisting of utility scripts/classes/packages which you can import/d
 + [wakelock](/android-utils/src/main/java/github/nisrulz/androidutils/wakelock/WakeLockUtils.java)
 + [webview](/android-utils/src/main/java/github/nisrulz/androidutils/webview/WebViewUtils.java)
 
-
-# Including in your project
-Android-Utils is available in the Jcenter, so getting it as simple as adding it as a dependency
-```gradle
-compile 'com.github.nisrulz:android-utils:{latest version}'
-```
-where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion)
-
 # Pull Requests
 I welcome and encourage all pull requests. It usually will take me within 24-48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
-  1. Match coding style (braces, spacing, etc.) This is best achieved using `CMD`+`Option`+`L` (Reformat code) on Mac (not sure for Windows) with Android Studio defaults.
+  1. Match coding style (braces, spacing, etc.) This is best achieved using CMD+Option+L (Reformat code) on Mac (not sure for Windows) with Android Studio defaults. The code style used in this project is from [Grandcentrix](https://github.com/grandcentrix/AndroidCodeStyle), so please use the same when editing this project.
   2. If its a feature, bugfix, or anything please only change code to what you specify.
   3. Please keep PR titles easy to read and descriptive of changes, this will make them easier to merge :)
   4. Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
-  5. Check for existing [issues](https://github.com/nisrulz/android-utils/issues) first, before filing an issue.
+  5. Check for existing [issues](https://github.com/nisrulz/android-utils/issues) first, before filing an issue.  
   6. Have fun!
 
-### Created & Maintained By
-[Nishant Srivastava](https://github.com/nisrulz) ([@nisrulz](https://www.twitter.com/nisrulz))
+## License
+Licensed under the Apache License, Version 2.0, [click here for the full license](/License.txt).
 
-> If you found this library helpful or you learned something from the source code and want to thank me, consider [buying me a cup of](https://www.paypal.me/nisrulz/5) :coffee:
+## Author & support
+This project was created by [Nishant Srivastava](https://github.com/nisrulz/nisrulz.github.io#nishant-srivastava) but hopefully developed and maintained by many others. See the [the list of contributors here](https://github.com/nisrulz/ShoutOut/graphs/contributors).
 
-License
-=======
+> If you appreciate my work, consider buying me a cup of :coffee: to keep me recharged :metal:
+>  + [PayPal](https://www.paypal.me/nisrulz/5)
+>  + Bitcoin Address: 13PjuJcfVW2Ad81fawqwLtku4bZLv1AxCL
+>
+> I love using my work and I'm available for contract work. Freelancing helps to maintain and keep [my open source projects](https://github.com/nisrulz/) up to date!
 
-    Copyright 2016 Nishant Srivastava
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+<img src="http://forthebadge.com/images/badges/built-for-android.svg" />
