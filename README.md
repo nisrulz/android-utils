@@ -75,6 +75,7 @@ implementation 'com.github.nisrulz:android-utils:{latest version}'
 where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils/_latestVersion)
 
 
+### Utils
 + [activity](/android-utils/src/main/java/github/nisrulz/androidutils/activity/ActivityUtils.java)
 + [audio](/android-utils/src/main/java/github/nisrulz/androidutils/audio/AudioUtils.java)
 + [battery](/android-utils/src/main/java/github/nisrulz/androidutils/battery/BatteryUtils.java)
