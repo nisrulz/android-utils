@@ -36,13 +36,13 @@ public class MD5 {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(input.getBytes());
             BigInteger number = new BigInteger(1, messageDigest);
-            String md5 = number.toString(16);
+            StringBuilder md5 = new StringBuilder(number.toString(16));
 
             while (md5.length() < 32) {
-                md5 = "0" + md5;
+                md5.insert(0, "0");
             }
 
-            return md5;
+            return md5.toString();
         } catch (NoSuchAlgorithmException e) {
             return null;
         }

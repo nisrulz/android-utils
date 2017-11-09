@@ -16,17 +16,14 @@
 
 package github.nisrulz.androidutils.network;
 
+import static org.junit.Assert.*;
+
 import github.nisrulz.androidutils.BuildConfig;
 import github.nisrulz.androidutils.misc.MiscUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.*;
+import org.junit.runner.*;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class)

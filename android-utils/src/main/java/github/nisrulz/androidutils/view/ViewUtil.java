@@ -21,7 +21,6 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Build;
-import android.view.Display;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -43,14 +42,8 @@ public class ViewUtil {
         Point size = new Point();
         WindowManager w = activity.getWindowManager();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-            w.getDefaultDisplay().getSize(size);
-            return new int[]{size.x, size.y};
-        } else {
-            Display d = w.getDefaultDisplay();
-            //noinspection deprecation
-            return new int[]{d.getWidth(), d.getHeight()};
-        }
+        w.getDefaultDisplay().getSize(size);
+        return new int[]{size.x, size.y};
     }
 
     /**

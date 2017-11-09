@@ -59,7 +59,7 @@ public class BatteryUtils {
     public static void registerBatteryChangeBroadcastReceiver(Context context,
             final BatteryChargeListener batteryChargeListener) {
         final IntentFilter theFilter = new IntentFilter();
-        /** System Defined Broadcast */
+        /* System Defined Broadcast */
         theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 
         BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {

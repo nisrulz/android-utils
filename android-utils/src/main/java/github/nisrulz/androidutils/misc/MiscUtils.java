@@ -16,13 +16,14 @@
 
 package github.nisrulz.androidutils.misc;
 
+import static android.view.WindowManager.LayoutParams;
+
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.widget.Toast;
@@ -31,8 +32,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import static android.view.WindowManager.LayoutParams;
 
 /**
  * The type Misc utils.
@@ -73,13 +72,11 @@ public class MiscUtils {
                     .detectNetwork()   // or .detectAll() for all detectable problems
                     .penaltyLog()
                     .build());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
-                        .detectLeakedClosableObjects()
-                        .penaltyLog()
-                        .penaltyDeath()
-                        .build());
-            }
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .penaltyLog()
+                    .penaltyDeath()
+                    .build());
         }
     }
 

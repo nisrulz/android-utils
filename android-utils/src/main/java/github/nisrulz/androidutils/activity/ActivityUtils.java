@@ -17,7 +17,6 @@
 package github.nisrulz.androidutils.activity;
 
 import android.app.Activity;
-import android.os.Build;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -33,7 +32,7 @@ public class ActivityUtils {
      */
     public static void hideActionBar(Activity activity) {
         // Call before calling setContentView();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && activity != null) {
+        if (activity != null) {
             activity.getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
             activity.getActionBar().hide();
         }

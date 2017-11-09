@@ -59,6 +59,7 @@ public class WebViewUtils {
      *
      * @param context the context
      */
+    @SuppressWarnings("deprecation")
     public static void syncCookieWithSystemBrowser(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             CookieManager.getInstance().flush();

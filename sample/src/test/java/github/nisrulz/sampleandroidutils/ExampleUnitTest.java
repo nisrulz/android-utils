@@ -16,9 +16,9 @@
 
 package github.nisrulz.sampleandroidutils;
 
-import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.*;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
