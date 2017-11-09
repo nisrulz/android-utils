@@ -33,62 +33,55 @@ import android.widget.EditText;
  */
 public class ViewUtil {
 
-  private ViewUtil() {
-    throw new UnsupportedOperationException(
-        "Should not create instance of Util class. Please use as static..");
-  }
+    /**
+     * Get the screen dimensions
+     *
+     * @param activity the activity
+     * @return the int [ ]
+     */
+    public static int[] getScreenSize(Activity activity) {
+        Point size = new Point();
+        WindowManager w = activity.getWindowManager();
 
-  /**
-   * Get the screen dimensions
-   *
-   * @param activity
-   *     the activity
-   * @return the int [ ]
-   */
-  public static int[] getScreenSize(Activity activity) {
-    Point size = new Point();
-    WindowManager w = activity.getWindowManager();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            w.getDefaultDisplay().getSize(size);
+            return new int[]{size.x, size.y};
+        } else {
+            Display d = w.getDefaultDisplay();
+            //noinspection deprecation
+            return new int[]{d.getWidth(), d.getHeight()};
+        }
+    }
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-      w.getDefaultDisplay().getSize(size);
-      return new int[] { size.x, size.y };
+    /**
+     * Hide On Screen Keyboard for EditText
+     *
+     * @param activity the activity
+     * @param editText the edit text
+     */
+    public static void hideOnScreenKeyboardForEditText(Activity activity, EditText editText) {
+        ((InputMethodManager) activity.getSystemService(
+                Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
-    else {
-      Display d = w.getDefaultDisplay();
-      //noinspection deprecation
-      return new int[] { d.getWidth(), d.getHeight() };
-    }
-  }
 
-  /**
-   * Set orientation change lock
-   *
-   * @param activity
-   *     the activity
-   * @param status
-   *     the status
-   */
-  public static void setOrientation(Activity activity, boolean status) {
-    if (status) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
-      }
+    /**
+     * Set orientation change lock
+     *
+     * @param activity the activity
+     * @param status   the status
+     */
+    public static void setOrientation(Activity activity, boolean status) {
+        if (status) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+            }
+        } else {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
+        }
     }
-    else {
-      activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
-    }
-  }
 
-  /**
-   * Hide On Screen Keyboard for EditText
-   *
-   * @param activity
-   *     the activity
-   * @param editText
-   *     the edit text
-   */
-  public static void hideOnScreenKeyboardForEditText(Activity activity, EditText editText) {
-    ((InputMethodManager) activity.getSystemService(
-        Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(editText.getWindowToken(), 0);
-  }
+    private ViewUtil() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 }

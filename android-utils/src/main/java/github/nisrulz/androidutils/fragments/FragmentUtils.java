@@ -22,8 +22,9 @@ package github.nisrulz.androidutils.fragments;
  * @author Nishant Srivastava
  */
 public class FragmentUtils {
-  private FragmentUtils() {
-    throw new UnsupportedOperationException(
-        "Should not create instance of Util class. Please use as static..");
-  }
+
+    private FragmentUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 }

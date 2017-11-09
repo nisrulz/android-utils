@@ -29,64 +29,62 @@ import android.os.BatteryManager;
  */
 public class BatteryUtils {
 
-  private BatteryUtils() {
-    throw new UnsupportedOperationException(
-        "Should not create instance of Util class. Please use as static..");
-  }
-
-  /**
-   * Register a listener for getting updates of device charging, discharging or completely charged.
-   *
-   * @param context
-   *     the context
-   * @param batteryChargeListener
-   *     the battery charge listener
-   */
-  public static void registerBatteryChangeBroadcastReceiver(Context context,
-      final BatteryChargeListener batteryChargeListener) {
-    final IntentFilter theFilter = new IntentFilter();
-    /** System Defined Broadcast */
-    theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
-
-    BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
-      @Override
-      public void onReceive(Context context, Intent intent) {
-        int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
-
-        if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
-          // Is Charging
-          batteryChargeListener.isCharging();
-        }
-        if (status == BatteryManager.BATTERY_STATUS_FULL) {
-          // Is Full
-          batteryChargeListener.isFull();
-        }
-        else {
-          // Is Discharging
-          batteryChargeListener.isDiscahrging();
-        }
-      }
-    };
-    context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
-  }
-
-  /**
-   * The interface Battery charge listener.
-   */
-  public interface BatteryChargeListener {
     /**
-     * Is charging.
+     * The interface Battery charge listener.
      */
-    void isCharging();
+    public interface BatteryChargeListener {
+
+        /**
+         * Is charging.
+         */
+        void isCharging();
+
+        /**
+         * Is discahrging.
+         */
+        void isDiscahrging();
+
+        /**
+         * Is full.
+         */
+        void isFull();
+    }
 
     /**
-     * Is full.
+     * Register a listener for getting updates of device charging, discharging or completely charged.
+     *
+     * @param context               the context
+     * @param batteryChargeListener the battery charge listener
      */
-    void isFull();
+    public static void registerBatteryChangeBroadcastReceiver(Context context,
+            final BatteryChargeListener batteryChargeListener) {
+        final IntentFilter theFilter = new IntentFilter();
+        /** System Defined Broadcast */
+        theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
 
-    /**
-     * Is discahrging.
-     */
-    void isDiscahrging();
-  }
+        BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0);
+
+                if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
+                    // Is Charging
+                    batteryChargeListener.isCharging();
+                }
+                if (status == BatteryManager.BATTERY_STATUS_FULL) {
+                    // Is Full
+                    batteryChargeListener.isFull();
+                } else {
+                    // Is Discharging
+                    batteryChargeListener.isDiscahrging();
+                }
+            }
+        };
+        context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
+    }
+
+    private BatteryUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 }

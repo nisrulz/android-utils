@@ -17,47 +17,51 @@
 package github.nisrulz.androidutils.network;
 
 public class HTTPResponseInfo {
-  private int statusCode;
-  private String statusText;
-  private String statusDescription;
-  private String type;
 
-  public HTTPResponseInfo() {
-    this.statusCode = 0;
-    this.statusText = "-";
-    this.statusDescription = "-";
-    this.type = "-";
-  }
+    private int statusCode;
 
-  public int getStatusCode() {
-    return statusCode;
-  }
+    private String statusDescription;
 
-  void setStatusCode(int statusCode) {
-    this.statusCode = statusCode;
-  }
+    private String statusText;
 
-  public String getStatusText() {
-    return statusText;
-  }
+    private String type;
 
-  void setStatusText(String statusText) {
-    this.statusText = statusText;
-  }
+    public HTTPResponseInfo() {
+        this.statusCode = 0;
+        this.statusText = "-";
+        this.statusDescription = "-";
+        this.type = "-";
+    }
 
-  public String getStatusDescription() {
-    return statusDescription;
-  }
+    public int getStatusCode() {
+        return statusCode;
+    }
 
-  void setStatusDescription(String statusDescription) {
-    this.statusDescription = statusDescription;
-  }
+    void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
 
-  public String getType() {
-    return type;
-  }
+    public String getStatusDescription() {
+        return statusDescription;
+    }
 
-  void setType(String type) {
-    this.type = type;
-  }
+    void setStatusDescription(String statusDescription) {
+        this.statusDescription = statusDescription;
+    }
+
+    public String getStatusText() {
+        return statusText;
+    }
+
+    void setStatusText(String statusText) {
+        this.statusText = statusText;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    void setType(String type) {
+        this.type = type;
+    }
 }

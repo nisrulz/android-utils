@@ -14,12 +14,10 @@
   ~ limitations under the License.
   -->
 
-<manifest
-    package="github.nisrulz.androidutils">
+<manifest package="github.nisrulz.androidutils">
 
-  <application
-      >
+    <application>
 
-  </application>
+    </application>
 
 </manifest>

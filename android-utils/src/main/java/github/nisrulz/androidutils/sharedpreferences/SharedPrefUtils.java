@@ -25,97 +25,82 @@ import android.content.Context;
  */
 public class SharedPrefUtils {
 
-  private static final String PREF_APP = "pref_app";
+    private static final String PREF_APP = "pref_app";
 
-  private SharedPrefUtils() {
-    throw new UnsupportedOperationException(
-        "Should not create instance of Util class. Please use as static..");
-  }
+    /**
+     * Gets boolean data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @return the boolean data
+     */
+    static public boolean getBooleanData(Context context, String key) {
 
-  /**
-   * Save data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @param val
-   *     the val
-   */
-  // Save Data
-  static public void saveData(Context context, String key, String val) {
-    context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putString(key, val).apply();
-  }
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getBoolean(key, false);
+    }
 
-  /**
-   * Save data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @param val
-   *     the val
-   */
-  static public void saveData(Context context, String key, int val) {
-    context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putInt(key, val).apply();
-  }
+    /**
+     * Gets int data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @return the int data
+     */
+    static public int getIntData(Context context, String key) {
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getInt(key, 0);
+    }
 
-  /**
-   * Save data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @param val
-   *     the val
-   */
-  static public void saveData(Context context, String key, boolean val) {
-    context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE)
-        .edit()
-        .putBoolean(key, val)
-        .apply();
-  }
+    /**
+     * Gets string data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @return the string data
+     */
+    // Get Data
+    static public String getStringData(Context context, String key) {
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getString(key, null);
+    }
 
-  /**
-   * Gets string data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @return the string data
-   */
-  // Get Data
-  static public String getStringData(Context context, String key) {
-    return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getString(key, null);
-  }
+    /**
+     * Save data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param val     the val
+     */
+    // Save Data
+    static public void saveData(Context context, String key, String val) {
+        context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putString(key, val).apply();
+    }
 
-  /**
-   * Gets int data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @return the int data
-   */
-  static public int getIntData(Context context, String key) {
-    return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getInt(key, 0);
-  }
+    /**
+     * Save data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param val     the val
+     */
+    static public void saveData(Context context, String key, int val) {
+        context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putInt(key, val).apply();
+    }
 
-  /**
-   * Gets boolean data.
-   *
-   * @param context
-   *     the context
-   * @param key
-   *     the key
-   * @return the boolean data
-   */
-  static public boolean getBooleanData(Context context, String key) {
+    /**
+     * Save data.
+     *
+     * @param context the context
+     * @param key     the key
+     * @param val     the val
+     */
+    static public void saveData(Context context, String key, boolean val) {
+        context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE)
+                .edit()
+                .putBoolean(key, val)
+                .apply();
+    }
 
-    return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getBoolean(key, false);
-  }
+    private SharedPrefUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 }
