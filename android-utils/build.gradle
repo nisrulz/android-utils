@@ -48,15 +48,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.4'
 
-    provided "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    compileOnly "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
 
     // OkHTTPUtils
-    provided "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
-    provided "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
+    compileOnly "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
+    compileOnly "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
 }
 
 apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/nishant-config.gradle'

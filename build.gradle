@@ -52,7 +52,7 @@ ext {
     buildToolsVersion = '27.0.1'
     supportLibVersion = '27.0.0'
 
-    okhttpVer = '3.8.1'
+    okhttpVer = '3.9.0'
 
     // Library Info
     libVersionCode = 7
