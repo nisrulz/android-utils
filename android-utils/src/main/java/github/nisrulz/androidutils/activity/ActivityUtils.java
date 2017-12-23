@@ -34,7 +34,9 @@ public class ActivityUtils {
         // Call before calling setContentView();
         if (activity != null) {
             activity.getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-            activity.getActionBar().hide();
+            if (activity.getActionBar() != null) {
+                activity.getActionBar().hide();
+            }
         }
     }
 

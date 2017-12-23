@@ -16,9 +16,11 @@
 
 package github.nisrulz.androidutils.network;
 
+import android.Manifest.permission;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 
 /**
@@ -34,6 +36,7 @@ public class NetworkUtils {
      * @param context the context
      * @return network info
      */
+    @RequiresPermission(permission.ACCESS_NETWORK_STATE)
     public static NetworkInfo getNetworkInfo(Context context) {
         ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -46,6 +49,7 @@ public class NetworkUtils {
      * @param context the context
      * @return boolean boolean
      */
+    @RequiresPermission(permission.ACCESS_NETWORK_STATE)
     public static boolean isConnected(Context context) {
         NetworkInfo info = getNetworkInfo(context);
         return (info != null && info.isConnected());
@@ -57,6 +61,7 @@ public class NetworkUtils {
      * @param context the context
      * @return boolean boolean
      */
+    @RequiresPermission(permission.ACCESS_NETWORK_STATE)
     public static boolean isConnectedFast(Context context) {
         NetworkInfo info = getNetworkInfo(context);
         return (info != null && info.isConnected() && isConnectionFast(info.getType(),
@@ -69,6 +74,7 @@ public class NetworkUtils {
      * @param context the context
      * @return boolean boolean
      */
+    @RequiresPermission(permission.ACCESS_NETWORK_STATE)
     public static boolean isConnectedMobile(Context context) {
         NetworkInfo info = getNetworkInfo(context);
         return (info != null
@@ -82,6 +88,7 @@ public class NetworkUtils {
      * @param context the context
      * @return boolean boolean
      */
+    @RequiresPermission(permission.ACCESS_NETWORK_STATE)
     public static boolean isConnectedWifi(Context context) {
         NetworkInfo info = getNetworkInfo(context);
         return (info != null && info.isConnected() && info.getType() == ConnectivityManager.TYPE_WIFI);
