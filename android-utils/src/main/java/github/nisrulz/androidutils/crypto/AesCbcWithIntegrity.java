@@ -78,14 +78,7 @@ public class AesCbcWithIntegrity {
             setIntegrityKey(integrityKeyIn);
         }
 
-        /**
-         * Gets confidentiality key.
-         *
-         * @return the confidentiality key
-         */
-        public SecretKey getConfidentialityKey() {
-            return confidentialityKey;
-        }        @Override
+        @Override
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -99,6 +92,15 @@ public class AesCbcWithIntegrity {
             SecretKeys other = (SecretKeys) obj;
             return integrityKey.equals(other.integrityKey) && confidentialityKey.equals(
                     other.confidentialityKey);
+        }
+
+        /**
+         * Gets confidentiality key.
+         *
+         * @return the confidentiality key
+         */
+        public SecretKey getConfidentialityKey() {
+            return confidentialityKey;
         }
 
         /**
@@ -136,7 +138,6 @@ public class AesCbcWithIntegrity {
             result = prime * result + integrityKey.hashCode();
             return result;
         }
-
 
 
         /**
@@ -213,14 +214,7 @@ public class AesCbcWithIntegrity {
             }
         }
 
-        /**
-         * Get cipher text byte [ ].
-         *
-         * @return the byte [ ]
-         */
-        public byte[] getCipherText() {
-            return cipherText;
-        }        @Override
+        @Override
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
@@ -234,6 +228,15 @@ public class AesCbcWithIntegrity {
             CipherTextIvMac other = (CipherTextIvMac) obj;
             return Arrays.equals(cipherText, other.cipherText) && Arrays.equals(iv, other.iv) && Arrays
                     .equals(mac, other.mac);
+        }
+
+        /**
+         * Get cipher text byte [ ].
+         *
+         * @return the byte [ ]
+         */
+        public byte[] getCipherText() {
+            return cipherText;
         }
 
         /**
@@ -253,7 +256,6 @@ public class AesCbcWithIntegrity {
         public byte[] getMac() {
             return mac;
         }
-
 
 
         @Override
@@ -347,21 +349,10 @@ public class AesCbcWithIntegrity {
             private boolean mSeeded;
 
             @Override
-            protected void engineSetSeed(byte[] bytes) {
-                try {
-                    OutputStream out;
-                    synchronized (sLock) {
-                        out = getUrandomOutputStream();
-                    }
-                    out.write(bytes);
-                    out.flush();
-                } catch (IOException e) {
-                    // On a small fraction of devices /dev/urandom is not
-                    // writable Log and ignore.
-                    Log.w(PrngFixes.class.getSimpleName(), "Failed to mix seed into " + URANDOM_FILE);
-                } finally {
-                    mSeeded = true;
-                }
+            protected byte[] engineGenerateSeed(int size) {
+                byte[] seed = new byte[size];
+                engineNextBytes(seed);
+                return seed;
             }
 
             @Override
@@ -385,10 +376,21 @@ public class AesCbcWithIntegrity {
             }
 
             @Override
-            protected byte[] engineGenerateSeed(int size) {
-                byte[] seed = new byte[size];
-                engineNextBytes(seed);
-                return seed;
+            protected void engineSetSeed(byte[] bytes) {
+                try {
+                    OutputStream out;
+                    synchronized (sLock) {
+                        out = getUrandomOutputStream();
+                    }
+                    out.write(bytes);
+                    out.flush();
+                } catch (IOException e) {
+                    // On a small fraction of devices /dev/urandom is not
+                    // writable Log and ignore.
+                    Log.w(PrngFixes.class.getSimpleName(), "Failed to mix seed into " + URANDOM_FILE);
+                } finally {
+                    mSeeded = true;
+                }
             }
 
             private DataInputStream getUrandomInputStream() {

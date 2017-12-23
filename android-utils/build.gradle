@@ -17,46 +17,46 @@
 apply plugin: 'com.android.library'
 
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
-  defaultConfig {
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode rootProject.ext.libVersionCode
-    versionName rootProject.ext.libVersionName
-  }
-
-  lintOptions {
-    abortOnError false
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.libVersionCode
+        versionName rootProject.ext.libVersionName
     }
-  }
 
-  if (JavaVersion.current().isJava8Compatible()) {
-    allprojects {
-      tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-      }
+    lintOptions {
+        abortOnError false
     }
-  }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    if (JavaVersion.current().isJava8Compatible()) {
+        allprojects {
+            tasks.withType(Javadoc) {
+                options.addStringOption('Xdoclint:none', '-quiet')
+            }
+        }
+    }
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  testImplementation 'junit:junit:4.12'
-  testImplementation 'org.robolectric:robolectric:3.4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.4'
 
-  provided "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    provided "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
 
-  // OkHTTPUtils
-  provided "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
-  provided "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
+    // OkHTTPUtils
+    provided "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
+    provided "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
 }
 
 apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/nishant-config.gradle'
