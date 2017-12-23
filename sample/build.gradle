@@ -50,6 +50,6 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
 
-    // implementation 'com.github.nisrulz:android-utils:1.0.3'
-    testImplementation project(':android-utils')
+    // implementation 'com.github.nisrulz:android-utils:1.0.7'
+    implementation project(':android-utils')
 }
