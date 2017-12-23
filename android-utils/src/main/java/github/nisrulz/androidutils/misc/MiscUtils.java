@@ -19,14 +19,10 @@ package github.nisrulz.androidutils.misc;
 import static android.view.WindowManager.LayoutParams;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.StrictMode;
-import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -132,69 +128,7 @@ public class MiscUtils {
         return (min + (int) (Math.random() * ((max - min) + 1)));
     }
 
-    /**
-     * Rate my app.
-     *
-     * @param context the context
-     */
-    public static void rateMyApp(Context context) {
 
-        Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
-        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-        // To count with Play market backstack, After pressing back button,
-        // to taken back to our application, we need to add following flags to intent.
-        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY
-                | Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
-                | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        try {
-            context.startActivity(goToMarket);
-        } catch (ActivityNotFoundException e) {
-            Intent i = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName()));
-            if (i.resolveActivity(context.getPackageManager()) != null) {
-                context.startActivity(i);
-            } else {
-                Toast.makeText(context, "Playstore Unavailable", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    /**
-     * Send mail.
-     *
-     * @param context  the context
-     * @param mailtoid the mailtoid
-     * @param subject  the subject
-     * @param body     the body
-     */
-    public static void sendMail(Context context, String mailtoid, String subject, String body) {
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", mailtoid, null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
-        context.startActivity(Intent.createChooser(emailIntent, "Send email"));
-    }
-
-    /**
-     * Share my app.
-     *
-     * @param context the context
-     * @param subject the subject
-     * @param message the message
-     */
-    public static void shareMyApp(Context context, String subject, String message) {
-        try {
-            String appUrl = "https://play.google.com/store/apps/details?id=" + context.getPackageName();
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("text/plain");
-            i.putExtra(Intent.EXTRA_SUBJECT, subject);
-            String leadingText = "\n" + message + "\n\n";
-            leadingText += appUrl + "\n\n";
-            i.putExtra(Intent.EXTRA_TEXT, leadingText);
-            context.startActivity(Intent.createChooser(i, "Share using"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     private MiscUtils() {
         throw new UnsupportedOperationException(
