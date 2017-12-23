@@ -32,9 +32,17 @@ import android.support.v4.app.ShareCompat;
 import android.widget.Toast;
 import java.io.File;
 
+/**
+ * The type Intent utils.
+ */
 public class IntentUtils {
 
 
+    /**
+     * Open app page in playstore.
+     *
+     * @param context the context
+     */
     public static void openAppPageInPlaystore(Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName()));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
@@ -42,6 +50,12 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Open url in browser.
+     *
+     * @param context the context
+     * @param url     the url
+     */
     public static void openUrlInBrowser(Context context, String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
@@ -49,6 +63,14 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Send email.
+     *
+     * @param context the context
+     * @param sendTo  the send to
+     * @param subject the subject
+     * @param body    the body
+     */
     public static void sendEmail(Context context, String[] sendTo, String subject, String body) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
@@ -111,6 +133,12 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Call.
+     *
+     * @param context the context
+     * @param number  the number
+     */
     @RequiresPermission(permission.CALL_PHONE)
     public static void call(Context context, String number) {
         Intent intent = new Intent(Intent.ACTION_CALL);
@@ -126,6 +154,13 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Send sms.
+     *
+     * @param context      the context
+     * @param sendToNumber the send to number
+     * @param message      the message
+     */
     public static void sendSMS(Context context, String sendToNumber, String message) {
         Uri smsUri = Uri.parse("tel:" + sendToNumber);
         Intent intent = new Intent(Intent.ACTION_VIEW, smsUri);
@@ -138,6 +173,14 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Show location in map.
+     *
+     * @param context   the context
+     * @param latitude  the latitude
+     * @param longitude the longitude
+     * @param zoomLevel the zoom level
+     */
     public static void showLocationInMap(Context context, String latitude, String longitude, String zoomLevel) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -152,6 +195,12 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Show location in map.
+     *
+     * @param context      the context
+     * @param locationName the location name
+     */
     public static void showLocationInMap(Context context, String locationName) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + locationName));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
@@ -160,6 +209,13 @@ public class IntentUtils {
     }
 
 
+    /**
+     * Take a pic.
+     *
+     * @param context  the context
+     * @param dir      the dir
+     * @param fileName the file name
+     */
     void takeAPic(Context context, String dir, String fileName) {
         Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().toString() + "/" + dir, fileName));
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -169,6 +225,15 @@ public class IntentUtils {
         }
     }
 
+    /**
+     * Share data.
+     *
+     * @param context  the context
+     * @param dir      the dir
+     * @param fileName the file name
+     * @param type     the type
+     * @param data     the data
+     */
     public static void shareData(Context context, String dir, String fileName, String type, String data) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType(type);
@@ -181,6 +246,13 @@ public class IntentUtils {
     }
 
 
+    /**
+     * Share text.
+     *
+     * @param activity the activity
+     * @param title    the title
+     * @param textData the text data
+     */
     public static void shareText(Activity activity, String title, String textData) {
         ShareCompat.IntentBuilder.from(activity).setType("text/plain").setChooserTitle(title)
                 .setText(textData).startChooser();
