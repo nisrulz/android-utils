@@ -51,7 +51,7 @@ ext {
     compileSdkVersion = targetSdkVersion
     supportLibVersion = '27.1.0'
 
-    okhttpVer = '3.9.1'
+    okhttpVer = '3.10.0'
 
     // Library Info
     libVersionCode = 8
