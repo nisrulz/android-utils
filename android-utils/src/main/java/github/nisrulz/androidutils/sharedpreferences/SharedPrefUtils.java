@@ -17,6 +17,8 @@
 package github.nisrulz.androidutils.sharedpreferences;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 /**
  * The type Shared pref utils.
@@ -97,6 +99,15 @@ public class SharedPrefUtils {
                 .edit()
                 .putBoolean(key, val)
                 .apply();
+    }
+
+
+    static public SharedPreferences.Editor getSharedPrefEditor(Context context, String pref) {
+        return context.getSharedPreferences(pref, Context.MODE_PRIVATE).edit();
+    }
+
+    static public void saveData(Editor editor) {
+        editor.apply();
     }
 
     private SharedPrefUtils() {
