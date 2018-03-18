@@ -15,21 +15,20 @@
  */
 
 apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
+apply from: '../libconfig.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.libVersionCode
-        versionName rootProject.ext.libVersionName
-    }
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode libConfig.versionCode
+        versionName libConfig.versionName
 
-    lintOptions {
-        abortOnError false
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -37,25 +36,27 @@ android {
         }
     }
 
-    if (JavaVersion.current().isJava8Compatible()) {
-        allprojects {
-            tasks.withType(Javadoc) {
-                options.addStringOption('Xdoclint:none', '-quiet')
-            }
-        }
+    lintOptions {
+        textOutput "stdout"
+        textReport true
+        checkAllWarnings true
+        warningsAsErrors true
+        showAll true
+        explainIssues true
+        abortOnError false
+        lintConfig file("$projectDir/lint.xml")
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:3.4'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    provided "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    compileOnly supportLibs
+    compileOnly network.okhttp
+    compileOnly network.interceptor
 
-    // OkHTTPUtils
-    provided "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
-    provided "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
+    // Testing
+    testImplementation unitTestLibs
 }
 
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/nishant-config.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/v2/publish-config.gradle'

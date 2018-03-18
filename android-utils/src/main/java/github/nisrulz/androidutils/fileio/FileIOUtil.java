@@ -50,7 +50,7 @@ public class FileIOUtil {
                 System.out.println(h.get("c"));
                 return h;
             } else {
-                System.out.println("FILE DOESNOT EXIST !!");
+                System.out.println("FILE DOES NOT EXIST !!");
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

@@ -15,22 +15,19 @@
  */
 
 apply plugin: 'com.android.application'
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         applicationId "github.nisrulz.sampleandroidutils"
-        versionCode 1
-        versionName "1.0"
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
-    lintOptions {
-        abortOnError false
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -38,16 +35,28 @@ android {
         }
     }
 
+    lintOptions {
+        textOutput "stdout"
+        textReport true
+        checkAllWarnings true
+        warningsAsErrors true
+        showAll true
+        explainIssues true
+        abortOnError false
+        lintConfig file("$projectDir/lint.xml")
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
 
-    // OkHTTPUtils
-    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
-    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
+    // Testing
+    testImplementation unitTestLibs
+    androidTestImplementation androidTestsLibs
+
+    implementation supportLibs
+    implementation network.okhttp
+    implementation network.interceptor
 
     // implementation 'com.github.nisrulz:android-utils:1.0.7'
     implementation project(':android-utils')

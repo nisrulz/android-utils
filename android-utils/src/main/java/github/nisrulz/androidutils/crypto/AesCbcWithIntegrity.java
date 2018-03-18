@@ -52,7 +52,7 @@ import javax.crypto.spec.SecretKeySpec;
  * Simple library for the "right" defaults for AES key generation, encryption,
  * and decryption using 128-bit AES, CBC, PKCS5 padding, and a random 16-byte IV
  * with SHA1PRNG. Integrity with HmacSHA256.
- * <p/>
+ *
  * https://github.com/tozny/java-aes-crypto
  */
 public class AesCbcWithIntegrity {
@@ -286,17 +286,17 @@ public class AesCbcWithIntegrity {
     /**
      * Fixes for the RNG as per
      * http://android-developers.blogspot.com/2013/08/some-securerandom-thoughts.html
-     * <p/>
+     *
      * This software is provided 'as-is', without any express or implied
      * warranty. In no event will Google be held liable for any damages arising
      * from the use of this software.
-     * <p/>
+     *
      * Permission is granted to anyone to use this software for any purpose,
      * including commercial applications, and to alter it and redistribute it
      * freely, as long as the origin is not misrepresented.
-     * <p/>
+     *
      * Fixes for the output of the default PRNG having low entropy.
-     * <p/>
+     *
      * The fixes need to be applied via {@link #apply()} before any use of Java
      * Cryptography Architecture primitives. A good place to invoke them is in
      * the application's {@code onCreate}.
