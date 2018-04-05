@@ -36,9 +36,8 @@ public class SharedPrefUtils {
      * @param key     the key
      * @return the boolean data
      */
-    static public boolean getBooleanData(Context context, String key) {
-
-        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getBoolean(key, false);
+    public static boolean getBooleanData(Context context, String key, boolean defaultValue) {
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getBoolean(key, defaultValue);
     }
 
     /**
@@ -48,8 +47,8 @@ public class SharedPrefUtils {
      * @param key     the key
      * @return the int data
      */
-    static public int getIntData(Context context, String key) {
-        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getInt(key, 0);
+    public static int getIntData(Context context, String key, int defaultValue) {
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getInt(key, defaultValue);
     }
 
     /**
@@ -60,8 +59,8 @@ public class SharedPrefUtils {
      * @return the string data
      */
     // Get Data
-    static public String getStringData(Context context, String key) {
-        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getString(key, null);
+    public static String getStringData(Context context, String key, String defaultValue) {
+        return context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).getString(key, defaultValue);
     }
 
     /**
@@ -72,7 +71,7 @@ public class SharedPrefUtils {
      * @param val     the val
      */
     // Save Data
-    static public void saveData(Context context, String key, String val) {
+    public static void saveData(Context context, String key, String val) {
         context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putString(key, val).apply();
     }
 
@@ -83,7 +82,7 @@ public class SharedPrefUtils {
      * @param key     the key
      * @param val     the val
      */
-    static public void saveData(Context context, String key, int val) {
+    public static void saveData(Context context, String key, int val) {
         context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE).edit().putInt(key, val).apply();
     }
 
@@ -94,7 +93,7 @@ public class SharedPrefUtils {
      * @param key     the key
      * @param val     the val
      */
-    static public void saveData(Context context, String key, boolean val) {
+    public static void saveData(Context context, String key, boolean val) {
         context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE)
                 .edit()
                 .putBoolean(key, val)
@@ -102,11 +101,11 @@ public class SharedPrefUtils {
     }
 
 
-    static public SharedPreferences.Editor getSharedPrefEditor(Context context, String pref) {
+    public static SharedPreferences.Editor getSharedPrefEditor(Context context, String pref) {
         return context.getSharedPreferences(pref, Context.MODE_PRIVATE).edit();
     }
 
-    static public void saveData(Editor editor) {
+    public static void saveData(Editor editor) {
         editor.apply();
     }
 
