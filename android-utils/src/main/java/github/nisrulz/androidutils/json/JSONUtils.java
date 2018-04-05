@@ -64,7 +64,7 @@ public class JSONUtils {
      * @param filename the filename
      * @return the json object
      */
-    public JSONObject loadJSONFromAsset(Context context, String filename) {
+    public static JSONObject loadJSONFromAsset(Context context, String filename) {
         String json = null;
         JSONObject jsonObject = null;
         try {
