@@ -23,17 +23,17 @@ ext {
             targetSdk               : 27,
             compileSdk              : 27,
 
-            androidGradlePlugin     : '3.0.1',
-            gradleBintrayPlugin     : '1.7.3',
-            androidMavenGradlePlugin: '2.0',
+            androidGradlePlugin     : '3.1.2',
+            gradleBintrayPlugin     : '1.8.0',
+            androidMavenGradlePlugin: '2.1',
 
-            support                 : "27.1.0",
+            support                 : '27.1.1',
 
             junit                   : '4.12',
-            espresso                : '3.0.1',
-            espressoRunner          : '1.0.1',
+            espresso                : '3.0.2',
+            testRunner              : '1.0.2',
 
-            lifeycle_runtime        : '1.1.0',
+            lifeycle_runtime        : '1.1.1',
             okhttp                  : '3.10.0'
     ]
 
@@ -61,8 +61,8 @@ ext {
             espressoCore   : "com.android.support.test.espresso:espresso-core:$versions.espresso",
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
             espressoIntents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
-            testRunner     : "com.android.support.test:runner:$versions.espressoRunner",
-            testRules      : "com.android.support.test:rules:$versions.espressoRunner",
+            testRunner     : "com.android.support.test:runner:$versions.testRunner",
+            testRules      : "com.android.support.test:rules:$versions.testRunner",
     ]
 
     gradlePlug = [
