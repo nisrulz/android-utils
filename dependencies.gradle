@@ -26,6 +26,7 @@ ext {
             androidGradlePlugin     : '3.1.3',
             gradleBintrayPlugin     : '1.8.0',
             androidMavenGradlePlugin: '2.1',
+            kotlin                  : '1.2.51',
 
             support                 : '27.1.1',
 
@@ -38,6 +39,8 @@ ext {
     ]
 
     junit = [junit: "junit:junit:$versions.junit"]
+
+    kotlin = [stdLib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"]
 
     lifecycle = [
             'runtime': "android.arch.lifecycle:runtime:$versions.lifeycle_runtime"
@@ -67,6 +70,7 @@ ext {
 
     gradlePlug = [
             android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+            kotlin:  "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
             bintray: "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.gradleBintrayPlugin",
             maven  : "com.github.dcendents:android-maven-gradle-plugin:$versions.androidMavenGradlePlugin"
     ]

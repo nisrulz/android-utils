@@ -42,7 +42,7 @@ public class WakeLockUtils {
      */
     public static void holdWakeLockTimed(Context context, long time) {
         PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyWakeLock");
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "found: MyWakeLock");
         wakeLock.acquire(time);
     }
 

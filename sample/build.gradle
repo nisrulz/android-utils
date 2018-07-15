@@ -58,6 +58,8 @@ dependencies {
     implementation network.okhttp
     implementation network.interceptor
 
+    implementation kotlin.stdLib
+
     // implementation 'com.github.nisrulz:android-utils:1.0.7'
     implementation project(':android-utils')
 }

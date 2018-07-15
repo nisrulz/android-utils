@@ -14,4 +14,15 @@
  * limitations under the License.
  */
 
-include ':sample', ':android-utils', ':android-utils-ktx'
+package github.nisrulz.androidutils.ktx.misc
+
+import java.util.Locale
+
+
+fun Locale.getDefaultLanguageCode(): String {
+    val defaultLanguageCode = Locale.getDefault().language
+    return if (defaultLanguageCode.isNullOrEmpty())
+        Locale.US.language
+    else
+        defaultLanguageCode
+}
