@@ -20,7 +20,7 @@ import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 
 object VersionUtils {
-    
+
     fun isApi(api: Int) = VERSION.SDK_INT == api
 
     fun isApiOrUp(api: Int) = VERSION.SDK_INT >= api

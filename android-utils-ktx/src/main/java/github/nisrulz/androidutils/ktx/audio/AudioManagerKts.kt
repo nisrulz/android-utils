@@ -16,11 +16,13 @@
 
 package github.nisrulz.androidutils.ktx.audio
 
+import android.annotation.TargetApi
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.util.Log
+import github.nisrulz.androidutils.ktx.misc.VersionUtils
 
 
 @RequiresApi(Build.VERSION_CODES.M)
@@ -28,44 +30,57 @@ fun AudioManager.getOutputAudioDevice(): Array<out AudioDeviceInfo>? {
     return this.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
 }
 
-@RequiresApi(Build.VERSION_CODES.M)
+@TargetApi(Build.VERSION_CODES.M)
 fun AudioManager.getSampleRate(): Int {
-    val sampleRateStr: String? = this.getProperty(AudioManager.PROPERTY_OUTPUT_SAMPLE_RATE)
-    return sampleRateStr?.let { str ->
-        Integer.parseInt(str).takeUnless { it == 0 }
-    } ?: 44100 // Use a default value if property not found
+    val defaultSampleRate = 44100
+    return if (VersionUtils.isMarshmallowOrUp()) {
+        val sampleRateStr: String? = this.getProperty(AudioManager.PROPERTY_OUTPUT_SAMPLE_RATE)
+        sampleRateStr?.let { str ->
+            Integer.parseInt(str).takeUnless { it == 0 }
+        } ?: defaultSampleRate // Use a default value if property not found
+    } else {
+        defaultSampleRate
+    }
 
 }
 
-@RequiresApi(Build.VERSION_CODES.M)
+@TargetApi(Build.VERSION_CODES.M)
 fun AudioManager.getFramesPerBuffer(): Int {
-    val framesPerBuffersStr: String? =
-            this.getProperty(AudioManager.PROPERTY_OUTPUT_FRAMES_PER_BUFFER)
-    return framesPerBuffersStr?.let { str ->
-        Integer.parseInt(str).takeUnless { it == 0 }
-    } ?: 256 // Use default
+    val defaultBufferSize = 256
+    return if (VersionUtils.isMarshmallowOrUp()) {
+        val framesPerBuffersStr: String? =
+                this.getProperty(AudioManager.PROPERTY_OUTPUT_FRAMES_PER_BUFFER)
+        framesPerBuffersStr?.let { str ->
+            Integer.parseInt(str).takeUnless { it == 0 }
+        } ?: defaultBufferSize // Use default
+    } else {
+        defaultBufferSize
+    }
 }
 
-@RequiresApi(Build.VERSION_CODES.M)
+@TargetApi(Build.VERSION_CODES.M)
 fun AudioManager.getOutputLatencyOnAudioRouteChange(audioDevices: Array<out AudioDeviceInfo>?): Int {
     var systemOutputLatency = 0
-    audioDevices?.forEach {
-        when (it.type) {
-        // Bluetooth
-            AudioDeviceInfo.TYPE_BLUETOOTH_A2DP -> systemOutputLatency =
-                    getSystemOutputLatencyInMs()
-            AudioDeviceInfo.TYPE_BLUETOOTH_SCO -> systemOutputLatency = getSystemOutputLatencyInMs()
 
-        // HDMI
-            AudioDeviceInfo.TYPE_HDMI -> systemOutputLatency = getSystemOutputLatencyInMs()
-            AudioDeviceInfo.TYPE_HDMI_ARC -> systemOutputLatency = getSystemOutputLatencyInMs()
+    if (VersionUtils.isMarshmallowOrUp()) {
+        audioDevices?.forEach {
+            when (it.type) {
+            // Bluetooth
+                AudioDeviceInfo.TYPE_BLUETOOTH_A2DP -> systemOutputLatency =
+                        getSystemOutputLatencyInMs()
+                AudioDeviceInfo.TYPE_BLUETOOTH_SCO -> systemOutputLatency = getSystemOutputLatencyInMs()
 
-        //Wired Headphones
-            AudioDeviceInfo.TYPE_WIRED_HEADPHONES -> systemOutputLatency =
-                    getSystemOutputLatencyInMs()
+            // HDMI
+                AudioDeviceInfo.TYPE_HDMI -> systemOutputLatency = getSystemOutputLatencyInMs()
+                AudioDeviceInfo.TYPE_HDMI_ARC -> systemOutputLatency = getSystemOutputLatencyInMs()
 
-        // Wired Headset
-            AudioDeviceInfo.TYPE_WIRED_HEADSET -> systemOutputLatency = getSystemOutputLatencyInMs()
+            //Wired Headphones
+                AudioDeviceInfo.TYPE_WIRED_HEADPHONES -> systemOutputLatency =
+                        getSystemOutputLatencyInMs()
+
+            // Wired Headset
+                AudioDeviceInfo.TYPE_WIRED_HEADSET -> systemOutputLatency = getSystemOutputLatencyInMs()
+            }
         }
     }
     return systemOutputLatency
@@ -92,8 +107,13 @@ fun AudioManager.getSystemOutputLatencyInMs(): Int {
 
 /**
  * Check if the music audio stream is muted
- * @receiver AudioManager
  * @return Boolean
  */
 @RequiresApi(Build.VERSION_CODES.M)
-fun AudioManager.isStreamMuted() = this.isStreamMute(AudioManager.STREAM_MUSIC)
+fun AudioManager.isStreamMuted(): Boolean {
+    return if (VersionUtils.isMarshmallowOrUp()) {
+        this.isStreamMute(AudioManager.STREAM_MUSIC)
+    } else {
+        false
+    }
+}
