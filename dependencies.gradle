@@ -47,13 +47,14 @@ ext {
     ]
 
     network = [
-            'okhttp': "com.squareup.okhttp3:okhttp:$versions.okhttp",
+            'okhttp'     : "com.squareup.okhttp3:okhttp:$versions.okhttp",
             'interceptor': "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
     ]
 
     supportDeps = [
             appcompatV7      : "com.android.support:appcompat-v7:$versions.support",
-            supportAnnotation: "com.android.support:support-annotations:$versions.support"
+            supportAnnotation: "com.android.support:support-annotations:$versions.support",
+            design           : "com.android.support:design:$versions.support"
     ]
 
     unitTest = [
@@ -70,7 +71,7 @@ ext {
 
     gradlePlug = [
             android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
-            kotlin:  "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+            kotlin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
             bintray: "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.gradleBintrayPlugin",
             maven  : "com.github.dcendents:android-maven-gradle-plugin:$versions.androidMavenGradlePlugin"
     ]

@@ -16,7 +16,7 @@
 
 package github.nisrulz.androidutils.ktx.misc
 
-import java.util.Locale
+import java.util.*
 
 
 fun Locale.getDefaultLanguageCode(): String {

@@ -16,6 +16,7 @@
 
 package github.nisrulz.androidutils.ktx.misc
 
+import android.os.Build
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 
@@ -34,4 +35,16 @@ object VersionUtils {
     fun isMarshmallowOrUp() = isApiOrUp(VERSION_CODES.M)
     fun isNougatOrUp() = isApiOrUp(VERSION_CODES.N)
     fun isOreoOrUp() = isApiOrUp(VERSION_CODES.O)
+
+    inline fun aboveApi(api: Int, included: Boolean = false, functionBlock: () -> Unit) {
+        if (Build.VERSION.SDK_INT > if (included) api - 1 else api) {
+            functionBlock()
+        }
+    }
+
+    inline fun belowApi(api: Int, included: Boolean = false, functionBlock: () -> Unit) {
+        if (Build.VERSION.SDK_INT < if (included) api + 1 else api) {
+            functionBlock()
+        }
+    }
 }

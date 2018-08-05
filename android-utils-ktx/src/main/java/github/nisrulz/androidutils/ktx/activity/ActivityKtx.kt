@@ -17,15 +17,34 @@
 package github.nisrulz.androidutils.ktx.activity
 
 import android.app.Activity
+import android.app.Service
 import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import android.content.pm.ActivityInfo
+import android.graphics.Color
 import android.graphics.Point
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import android.support.annotation.StringRes
+import android.support.v4.app.FragmentActivity
+import android.support.v4.app.FragmentTransaction
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import github.nisrulz.androidutils.ktx.misc.VersionUtils
+
+
+inline fun <reified T : Activity> Activity.startActivity() = startActivity(Intent(this, T::class.java))
+
+inline fun <reified T : Activity> Activity.startActivity(requestCode: Int) = startActivityForResult(Intent(this, T::class.java), requestCode)
+
+inline fun <reified T : Service> Activity.startService() = startService(Intent(this, T::class.java))
+
+inline fun <reified T : Service> Activity.startService(sc: ServiceConnection, flags: Int = Context.BIND_AUTO_CREATE) = bindService(Intent(this, T::class.java), sc, flags)
+
 
 fun Activity.hideActionBar() {
     // Call before calling setContentView();
@@ -46,6 +65,26 @@ fun Activity.getScreenSize(): IntArray {
     return intArrayOf(size.x, size.y)
 }
 
+fun Activity.clearWindowBackground() = window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+fun Activity.steepStatusBar() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+    }
+}
+
+fun Activity.hideInputMethod() = window.peekDecorView()?.let {
+    (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
+            .hideSoftInputFromWindow(window.peekDecorView().windowToken, 0)
+}
+
+fun Activity.showInputMethod(v: EditText) {
+    v.requestFocus()
+    (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(v, InputMethodManager.SHOW_FORCED)
+}
+
+
 // Hide On Screen Keyboard for EditText
 fun Activity.hideOnScreenKeyboardForEditText(editText: EditText) {
     (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
@@ -60,4 +99,14 @@ fun Activity.setOrientation(status: Boolean) {
     } else {
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER
     }
+}
+
+fun Activity.toast(@StringRes resourceId: Int, length: Int = Toast.LENGTH_SHORT) = toast(getString(resourceId), length)
+
+fun Activity.toast(message: String, length: Int = Toast.LENGTH_SHORT) = Toast.makeText(this, message, length).show()
+
+inline fun FragmentActivity.fragmentTransaction(function: FragmentTransaction.() -> FragmentTransaction) {
+    supportFragmentManager.beginTransaction()
+            .function()
+            .commit()
 }
