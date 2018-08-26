@@ -1,5 +1,7 @@
 package github.nisrulz.androidutils.ktx.misc
 
+import android.text.Html
+import android.text.Spanned
 import java.security.MessageDigest
 
 
@@ -55,4 +57,13 @@ fun String.isEmail(): Boolean {
 fun String.isNumeric(): Boolean {
     val p = "^[0-9]+$".toRegex()
     return matches(p)
+}
+
+fun String.getHtmlFormattedSpanned(): Spanned {
+    return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
+    } else {
+        @Suppress("DEPRECATION")
+        Html.fromHtml(this)
+    }
 }
