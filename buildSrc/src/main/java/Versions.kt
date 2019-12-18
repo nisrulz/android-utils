@@ -45,6 +45,6 @@ object Versions {
     const val appName = "1.0.0"
 
     // Library
-    const val libraryCode = 17
-    const val libraryName = "2.0.0"
+    const val libraryCode = 8
+    const val libraryName = "1.0.8"
 }
