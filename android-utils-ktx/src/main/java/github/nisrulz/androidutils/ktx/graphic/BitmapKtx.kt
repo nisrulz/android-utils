@@ -18,8 +18,8 @@ package github.nisrulz.androidutils.ktx.graphic
 
 import android.graphics.Bitmap
 import android.graphics.Matrix
-import android.support.annotation.IntRange
 import android.util.Base64
+import androidx.annotation.IntRange
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream

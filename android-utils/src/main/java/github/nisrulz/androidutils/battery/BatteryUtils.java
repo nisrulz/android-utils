@@ -29,25 +29,9 @@ import android.os.BatteryManager;
  */
 public class BatteryUtils {
 
-    /**
-     * The interface Battery charge listener.
-     */
-    public interface BatteryChargeListener {
-
-        /**
-         * Is charging.
-         */
-        void isCharging();
-
-        /**
-         * Is discahrging.
-         */
-        void isDiscahrging();
-
-        /**
-         * Is full.
-         */
-        void isFull();
+    private BatteryUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
     }
 
     /**
@@ -57,7 +41,7 @@ public class BatteryUtils {
      * @param batteryChargeListener the battery charge listener
      */
     public static void registerBatteryChangeBroadcastReceiver(Context context,
-            final BatteryChargeListener batteryChargeListener) {
+                                                              final BatteryChargeListener batteryChargeListener) {
         final IntentFilter theFilter = new IntentFilter();
         /* System Defined Broadcast */
         theFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -83,8 +67,24 @@ public class BatteryUtils {
         context.getApplicationContext().registerReceiver(batteryChargeReceiver, theFilter);
     }
 
-    private BatteryUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
+    /**
+     * The interface Battery charge listener.
+     */
+    public interface BatteryChargeListener {
+
+        /**
+         * Is charging.
+         */
+        void isCharging();
+
+        /**
+         * Is discahrging.
+         */
+        void isDiscahrging();
+
+        /**
+         * Is full.
+         */
+        void isFull();
     }
 }

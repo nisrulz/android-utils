@@ -14,19 +14,10 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
-
-// Configs
-apply from: "$rootProject.projectDir/configs/common.gradle"
-apply from: "$rootProject.projectDir/configs/library.gradle"
-
-dependencies {
-    // Support
-    compileOnly Dependencies.andxAppCompat
-    compileOnly Dependencies.andxAnnotation
-
-    // Network
-    compileOnly Dependencies.okhttp
-    compileOnly Dependencies.okhttpInterceptor
-
+object LibraryConfig {
+    const val libPomUrl = "https://github.com/nisrulz/android-utils"
+    const val libGithubRepo = "nisrulz/android-utils"
+    const val libModuleName = "android-utils"
+    const val libModuleDesc = "Android library facilitating some very common functionalities in the form of utility classes."
+    const val libBintrayName = "com.github.nisrulz:android-utils"
 }

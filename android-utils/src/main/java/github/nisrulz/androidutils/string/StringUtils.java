@@ -23,6 +23,11 @@ package github.nisrulz.androidutils.string;
  */
 public class StringUtils {
 
+    private StringUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Remove the last specified character
      *
@@ -61,10 +66,5 @@ public class StringUtils {
         }
 
         return titleCase.toString();
-    }
-
-    private StringUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

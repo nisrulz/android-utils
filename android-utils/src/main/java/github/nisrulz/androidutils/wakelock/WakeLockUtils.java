@@ -31,6 +31,11 @@ public class WakeLockUtils {
      */
     private static PowerManager.WakeLock wakeLock;
 
+    private WakeLockUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     public static void holdWakeLock(Context context) {
         holdWakeLockTimed(context, 3600);
     }
@@ -53,10 +58,5 @@ public class WakeLockUtils {
         if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
-    }
-
-    private WakeLockUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

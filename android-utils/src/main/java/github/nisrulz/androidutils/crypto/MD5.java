@@ -25,6 +25,11 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5 {
 
+    private MD5() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Get MD5 value for a string
      *
@@ -46,10 +51,5 @@ public class MD5 {
         } catch (NoSuchAlgorithmException e) {
             return null;
         }
-    }
-
-    private MD5() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

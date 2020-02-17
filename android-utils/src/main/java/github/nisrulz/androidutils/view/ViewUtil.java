@@ -32,6 +32,11 @@ import android.widget.EditText;
  */
 public class ViewUtil {
 
+    private ViewUtil() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Get the screen dimensions
      *
@@ -71,10 +76,5 @@ public class ViewUtil {
         } else {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
         }
-    }
-
-    private ViewUtil() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

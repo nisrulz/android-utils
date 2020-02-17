@@ -28,6 +28,11 @@ import android.content.pm.PackageManager;
  */
 public class BroadcastReceiverUtils {
 
+    private BroadcastReceiverUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Broadcast data as a message
      *
@@ -37,7 +42,7 @@ public class BroadcastReceiverUtils {
      * @param custompermission the custompermission
      */
     public static void broadcastData(Context context, String data, String action,
-            String custompermission) {
+                                     String custompermission) {
         Intent i = new Intent();
         i.putExtra("data", data);
         i.setAction(action); // action ~ "com.example.android.action"
@@ -64,10 +69,5 @@ public class BroadcastReceiverUtils {
         }
 
         pm.setComponentEnabledSetting(receiverName, newstate, PackageManager.DONT_KILL_APP);
-    }
-
-    private BroadcastReceiverUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

@@ -26,6 +26,11 @@ import android.content.Context;
  */
 public class ServiceUtils {
 
+    private ServiceUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Check if the service is running in the device.
      *
@@ -47,10 +52,5 @@ public class ServiceUtils {
             e.printStackTrace();
         }
         return false;
-    }
-
-    private ServiceUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

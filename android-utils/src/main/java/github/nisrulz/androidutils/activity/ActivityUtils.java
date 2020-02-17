@@ -25,6 +25,11 @@ import android.view.WindowManager;
  */
 public class ActivityUtils {
 
+    private ActivityUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Hides the activity's action bar
      *
@@ -50,10 +55,5 @@ public class ActivityUtils {
         activity.getWindow()
                 .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
-    }
-
-    private ActivityUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

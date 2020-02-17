@@ -14,16 +14,25 @@
  * limitations under the License.
  */
 
+android {
+    defaultConfig {
+        versionCode Versions.libraryCode
+        versionName Versions.libraryName
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
 ext {
     libConfig = [
-            versionCode     : 8,
-            versionName     : '1.0.8',
-            pomUrl          : 'https://github.com/nisrulz/android-utils',
-            githubRepo      : 'nisrulz/android-utils',
+            versionCode     : Versions.libraryCode,
+            versionName     : Versions.libraryName,
+            pomUrl          : LibraryConfig.libPomUrl,
+            githubRepo      : LibraryConfig.libGithubRepo,
 
-            moduleName      : 'android-utils',
-            moduleDesc      : 'Android library facilitating some very common functionalities in the form of utility classes.',
-            bintrayName     : 'com.github.nisrulz:android-utils',
+            moduleName      : LibraryConfig.libModuleName,
+            moduleDesc      : LibraryConfig.libModuleDesc,
+            bintrayName     : LibraryConfig.libBintrayName,
 
             publishedGroupId: GROUP,
             developerId     : POM_DEVELOPER_ID,
@@ -39,3 +48,18 @@ ext {
             apikey: BINTRAY_APIKEY
     ]
 }
+
+ext {
+    // Library Info
+    libVersionCode = Versions.libraryCode
+    libVersionName = Versions.libraryName
+
+    libPomUrl = LibraryConfig.libPomUrl
+    libGithubRepo = LibraryConfig.libGithubRepo
+
+    libModuleName = LibraryConfig.libModuleName
+    libModuleDesc = LibraryConfig.libModuleDesc
+    libBintrayName = LibraryConfig.libBintrayName
+}
+
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/v2/publish-config.gradle'

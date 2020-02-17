@@ -1,10 +1,10 @@
 package github.nisrulz.androidutils.ktx.view
 
-import android.support.design.internal.BottomNavigationItemView
-import android.support.design.internal.BottomNavigationMenuView
-import android.support.design.widget.BottomNavigationView
 import android.view.LayoutInflater
 import android.widget.TextView
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import github.nisrulz.androidutils.ktx.R
 
 fun BottomNavigationView.addBadge(index: Int, value: Int) {
@@ -28,9 +28,9 @@ fun BottomNavigationView.addBadge(index: Int, value: Int) {
  */
 fun BottomNavigationView.removeBadge(index: Int) {
     val menuView = this.getChildAt(0) as BottomNavigationMenuView
-    val item = menuView.getChildAt(index-1) as BottomNavigationItemView
+    val item = menuView.getChildAt(index - 1) as BottomNavigationItemView
     if (item.childCount == 3) {
         // Remove the last added view i.e badge
-        item.removeViewAt(item.childCount-1)
+        item.removeViewAt(item.childCount - 1)
     }
 }

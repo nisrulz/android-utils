@@ -20,8 +20,8 @@ import android.annotation.TargetApi
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
-import android.support.annotation.RequiresApi
 import android.util.Log
+import androidx.annotation.RequiresApi
 import github.nisrulz.androidutils.ktx.misc.VersionUtils
 
 

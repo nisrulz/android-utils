@@ -17,8 +17,10 @@
 package github.nisrulz.androidutils.network;
 
 import android.content.Context;
+
 import java.io.File;
 import java.io.IOException;
+
 import okhttp3.Response;
 import okio.BufferedSink;
 import okio.Okio;
@@ -29,6 +31,11 @@ import okio.Okio;
  * @author Nishant Srivastava
  */
 public class OkHTTPUtils {
+
+    private OkHTTPUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Save the response as a binary file i.e html file.
@@ -44,10 +51,5 @@ public class OkHTTPUtils {
         BufferedSink sink = Okio.buffer(Okio.sink(downloadedFile));
         sink.writeAll(response.body().source());
         sink.close();
-    }
-
-    private OkHTTPUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

@@ -39,6 +39,11 @@ public class RateMyApp {
 
     private final static int LAUNCHES_UNTIL_PROMPT = 7;
 
+    private RateMyApp() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Launch Rate the app dialogue when the app is launched for the first time.
      *
@@ -138,10 +143,5 @@ public class RateMyApp {
 
         dialog.setContentView(ll);
         dialog.show();
-    }
-
-    private RateMyApp() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

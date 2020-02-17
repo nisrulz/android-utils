@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+object Plugins {
+    // Plugins
+    const val android = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
 
-// Configs
-apply from: "$rootProject.projectDir/configs/common.gradle"
-apply from: "$rootProject.projectDir/configs/library.gradle"
+    // Kotlin
+    const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 
-dependencies {
-    // Support
-    compileOnly Dependencies.andxAppCompat
-    compileOnly Dependencies.andxAnnotation
 
-    // Network
-    compileOnly Dependencies.okhttp
-    compileOnly Dependencies.okhttpInterceptor
-
+    // Publish
+    const val bintray = "com.jfrog.bintray.gradle:gradle-bintray-plugin:${Versions.bintrayPlugin}"
+    const val androidMaven = "com.github.dcendents:android-maven-gradle-plugin:${Versions.androidMavenPlugin}"
 }

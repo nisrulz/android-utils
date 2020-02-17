@@ -19,13 +19,15 @@ package github.nisrulz.androidutils.ktx.view
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Outline
 import android.os.Build
-import android.support.annotation.*
-import android.support.annotation.IntRange
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.view.animation.AlphaAnimation
+import androidx.annotation.*
+import androidx.annotation.IntRange
 import github.nisrulz.androidutils.ktx.misc.VersionUtils
 
 fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
@@ -52,29 +54,25 @@ fun View.setupElevationProperty(@DimenRes id: Int) {
     }
 }
 
-inline fun ViewGroup.inflate(@LayoutRes l: Int): View =
-        LayoutInflater.from(context).inflate(l, this, false)
-
 // Get the children at index
-inline operator fun ViewGroup.get(i: Int): View? = getChildAt(i)
+operator fun ViewGroup.get(i: Int): View? = getChildAt(i)
 
 //  -=
-inline operator fun ViewGroup.minusAssign(child: View) = removeView(child)
+operator fun ViewGroup.minusAssign(child: View) = removeView(child)
 
 // +=
-inline operator fun ViewGroup.plusAssign(child: View) = addView(child)
+operator fun ViewGroup.plusAssign(child: View) = addView(child)
 
 // if (view in views)
-inline fun ViewGroup.contains(child: View) = indexOfChild(child) != -1
+fun ViewGroup.contains(child: View) = indexOfChild(child) != -1
 
-inline fun ViewGroup.first(): View? = this[0]
+fun ViewGroup.first(): View? = this[0]
 
 inline fun ViewGroup.forEach(action: (View) -> Unit) {
     for (i in 0 until childCount) {
         action(getChildAt(i))
     }
 }
-
 
 inline fun ViewGroup.forEachIndexed(action: (Int, View) -> Unit) {
     for (i in 0 until childCount) {
@@ -83,11 +81,46 @@ inline fun ViewGroup.forEachIndexed(action: (Int, View) -> Unit) {
 }
 
 // for (view in views.children())
-inline fun ViewGroup.children() = object : Iterable<View> {
+fun ViewGroup.children() = object : Iterable<View> {
     override fun iterator() = object : Iterator<View> {
         var index = 0
         override fun hasNext() = index < childCount
         override fun next() = getChildAt(index++)
+    }
+}
+
+fun View.showWithFadeIn() {
+    this.alpha = 0f
+    this.show()
+    this.animate().alpha(1f)
+}
+
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
+fun View.hideWithFadeOut() {
+    this.alpha = 1f
+    this.animate().alpha(0f).withEndAction {
+        this.hide()
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
+fun View.goneWithFadeOut() {
+    this.alpha = 1f
+    this.animate().alpha(0f).withEndAction {
+        this.gone()
+    }
+}
+
+
+fun View.enable() {
+    if (!isEnabled) {
+        this.isEnabled = true
+    }
+}
+
+fun View.disable() {
+    if (isEnabled) {
+        this.isEnabled = false
     }
 }
 
@@ -149,7 +182,7 @@ inline fun View.goneIf(block: () -> Boolean) {
     }
 }
 
-fun View.visible() {
+fun View.show() {
     if (visibility != View.VISIBLE) {
         visibility = View.VISIBLE
     }
@@ -161,7 +194,7 @@ inline fun View.visibleIf(block: () -> Boolean) {
     }
 }
 
-fun View.invisible() {
+fun View.hide() {
     if (visibility != View.INVISIBLE) {
         visibility = View.INVISIBLE
     }
@@ -186,5 +219,26 @@ fun View.setWidth(value: Int) {
     lp?.let {
         lp.width = value
         layoutParams = lp
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+fun View?.clipToCircle() {
+    this?.apply {
+        clipToOutline = true
+        // Set to null to disable shadows
+        outlineProvider = CircularOutlineProvider
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+object CircularOutlineProvider : ViewOutlineProvider() {
+    override fun getOutline(view: View, outline: Outline) {
+        outline.setOval(
+                view.paddingLeft,
+                view.paddingTop,
+                view.width - view.paddingRight,
+                view.height - view.paddingBottom
+        )
     }
 }

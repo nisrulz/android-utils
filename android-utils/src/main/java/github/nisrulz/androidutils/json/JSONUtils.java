@@ -17,12 +17,14 @@
 package github.nisrulz.androidutils.json;
 
 import android.content.Context;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * The type Json utils.
@@ -30,6 +32,11 @@ import org.json.JSONObject;
  * @author Nishant Srivastava
  */
 public class JSONUtils {
+
+    private JSONUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Iterate over all keys of the JSON
@@ -50,11 +57,6 @@ public class JSONUtils {
             }
         }
         return keyValueMap;
-    }
-
-    private JSONUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 
     /**

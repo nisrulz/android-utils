@@ -25,6 +25,11 @@ import android.media.AudioRecord;
  */
 public class AudioUtils {
 
+    private AudioUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Check correct buffer size for your AudioRecord instance
      *
@@ -35,7 +40,7 @@ public class AudioUtils {
      * @return the int
      */
     public static int getValidBufferSize(int audioSource, int fs, int channelConfiguration,
-            int audioEncoding) {
+                                         int audioEncoding) {
         for (int bufferSize : new int[]{
                 256, 512, 1024, 2048, 4096
         }) {  // add the rates you wish to check against
@@ -65,10 +70,5 @@ public class AudioUtils {
             }
         }
         return 0;
-    }
-
-    private AudioUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

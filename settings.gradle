@@ -14,4 +14,7 @@
  * limitations under the License.
  */
 
-include ':sample', ':android-utils', ':android-utils-ktx'
+rootProject.name = 'AndroidUtilsProject'
+include ':sample'
+include ':android-utils'
+include ':android-utils-ktx'

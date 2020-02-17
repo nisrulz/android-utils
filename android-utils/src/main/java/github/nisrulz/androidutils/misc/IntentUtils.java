@@ -26,10 +26,12 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.RequiresPermission;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ShareCompat;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresPermission;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ShareCompat;
+
 import java.io.File;
 
 /**
@@ -208,23 +210,6 @@ public class IntentUtils {
         }
     }
 
-
-    /**
-     * Take a pic.
-     *
-     * @param context  the context
-     * @param dir      the dir
-     * @param fileName the file name
-     */
-    void takeAPic(Context context, String dir, String fileName) {
-        Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().toString() + "/" + dir, fileName));
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        if (intent.resolveActivity(context.getPackageManager()) != null) {
-            context.startActivity(intent);
-        }
-    }
-
     /**
      * Share data.
      *
@@ -245,7 +230,6 @@ public class IntentUtils {
         }
     }
 
-
     /**
      * Share text.
      *
@@ -256,6 +240,22 @@ public class IntentUtils {
     public static void shareText(Activity activity, String title, String textData) {
         ShareCompat.IntentBuilder.from(activity).setType("text/plain").setChooserTitle(title)
                 .setText(textData).startChooser();
+    }
+
+    /**
+     * Take a pic.
+     *
+     * @param context  the context
+     * @param dir      the dir
+     * @param fileName the file name
+     */
+    void takeAPic(Context context, String dir, String fileName) {
+        Uri uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory().toString() + "/" + dir, fileName));
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            context.startActivity(intent);
+        }
     }
 
 }

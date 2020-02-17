@@ -37,7 +37,7 @@ public class HTTPResponseUtil {
      * @return the info
      */
     public HTTPResponseInfo getInfo(int statusCode) {
-    /* Http Code data reference from : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status */
+        /* Http Code data reference from : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status */
         httpResponseInfo.setStatusCode(statusCode);
 
         switch (statusCode) {

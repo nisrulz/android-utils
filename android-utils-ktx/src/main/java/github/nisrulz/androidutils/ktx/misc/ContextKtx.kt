@@ -25,6 +25,7 @@ import android.bluetooth.BluetoothManager
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.hardware.camera2.CameraManager
 import android.media.AudioManager
 import android.net.ConnectivityManager
@@ -33,15 +34,15 @@ import android.os.BatteryManager
 import android.os.Build
 import android.os.Looper
 import android.os.Vibrator
-import android.support.annotation.ColorRes
-import android.support.annotation.RequiresApi
-import android.support.annotation.RequiresPermission
-import android.support.annotation.StringRes
-import android.support.v4.content.ContextCompat
 import android.telephony.TelephonyManager
 import android.view.inputmethod.InputMethodManager
 import android.webkit.CookieManager
 import android.webkit.CookieSyncManager
+import androidx.annotation.ColorRes
+import androidx.annotation.RequiresApi
+import androidx.annotation.RequiresPermission
+import androidx.annotation.StringRes
+import androidx.core.content.ContextCompat
 
 @RequiresPermission(permission.ACCESS_NETWORK_STATE)
 fun Context.isConnectedToNetwork(): Boolean {
@@ -122,3 +123,5 @@ inline val Context.cameraManager
 
 inline val Context.vibrator
     get() = applicationContext.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+fun Context.isPermissionGranted(permission: String) = ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED

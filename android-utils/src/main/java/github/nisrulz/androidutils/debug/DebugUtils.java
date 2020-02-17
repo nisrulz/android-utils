@@ -26,6 +26,11 @@ import android.view.WindowManager;
  */
 public class DebugUtils {
 
+    private DebugUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Keep screen on while debugging.
      *
@@ -43,10 +48,5 @@ public class DebugUtils {
                 Log.d("SCREEN", "Keeping screen on for debugging is now deactivated.");
             }
         }
-    }
-
-    private DebugUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

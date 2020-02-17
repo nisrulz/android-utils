@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.DisplayMetrics;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,6 +33,11 @@ import java.util.List;
  * @author Nishant Srivastava
  */
 public class ConvertUtils {
+
+    private ConvertUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Dp to pixels
@@ -64,10 +70,8 @@ public class ConvertUtils {
     /***
      * Android L (lollipop, API 21) introduced a new problem when trying to invoke implicit intent,
      * "java.lang.IllegalArgumentException: Service Intent must be explicit"
-     * <p/>
      * If you are using an implicit intent, and know only 1 target would answer this intent,
      * This method will help you turn the implicit intent into the explicit form.
-     * <p/>
      * Inspired from SO answer: http://stackoverflow.com/a/26318757/1446466
      *
      * @param context
@@ -175,10 +179,5 @@ public class ConvertUtils {
             params.put(pairs[0], pairs.length == 1 ? "" : pairs[1]);
         }
         return params;
-    }
-
-    private ConvertUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

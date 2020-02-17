@@ -29,6 +29,11 @@ public class SharedPrefUtils {
 
     private static final String PREF_APP = "pref_app";
 
+    private SharedPrefUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Gets boolean data.
      *
@@ -101,17 +106,11 @@ public class SharedPrefUtils {
                 .apply();
     }
 
-
     static public SharedPreferences.Editor getSharedPrefEditor(Context context, String pref) {
         return context.getSharedPreferences(pref, Context.MODE_PRIVATE).edit();
     }
 
     static public void saveData(Editor editor) {
         editor.apply();
-    }
-
-    private SharedPrefUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

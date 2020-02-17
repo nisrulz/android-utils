@@ -14,19 +14,6 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
-
-// Configs
-apply from: "$rootProject.projectDir/configs/common.gradle"
-apply from: "$rootProject.projectDir/configs/library.gradle"
-
-dependencies {
-    // Support
-    compileOnly Dependencies.andxAppCompat
-    compileOnly Dependencies.andxAnnotation
-
-    // Network
-    compileOnly Dependencies.okhttp
-    compileOnly Dependencies.okhttpInterceptor
-
+object Config {
+    const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }

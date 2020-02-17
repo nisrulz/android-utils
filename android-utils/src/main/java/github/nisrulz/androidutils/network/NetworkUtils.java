@@ -20,8 +20,9 @@ import android.Manifest.permission;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
+
+import androidx.annotation.RequiresPermission;
 
 /**
  * The type Network utils.
@@ -29,6 +30,11 @@ import android.telephony.TelephonyManager;
  * @author Nishant Srivastava
  */
 public class NetworkUtils {
+
+    private NetworkUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Get the network info
@@ -126,10 +132,10 @@ public class NetworkUtils {
                     return true; // ~ 1-23 Mbps
                 case TelephonyManager.NETWORK_TYPE_UMTS:
                     return true; // ~ 400-7000 kbps
-            /*
-             * Above API level 7, make sure to set android:targetSdkVersion
-			 * to appropriate level to use these
-			 */
+                /*
+                 * Above API level 7, make sure to set android:targetSdkVersion
+                 * to appropriate level to use these
+                 */
                 case TelephonyManager.NETWORK_TYPE_EHRPD: // API level 11
                     return true; // ~ 1-2 Mbps
                 case TelephonyManager.NETWORK_TYPE_EVDO_B: // API level 9
@@ -148,10 +154,5 @@ public class NetworkUtils {
         } else {
             return false;
         }
-    }
-
-    private NetworkUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

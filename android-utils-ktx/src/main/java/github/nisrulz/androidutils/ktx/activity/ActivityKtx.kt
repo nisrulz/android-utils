@@ -26,14 +26,14 @@ import android.graphics.Color
 import android.graphics.Point
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import android.support.annotation.StringRes
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentTransaction
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentTransaction
 import github.nisrulz.androidutils.ktx.misc.VersionUtils
 
 

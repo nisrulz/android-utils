@@ -30,6 +30,11 @@ import android.webkit.WebView;
  */
 public class WebViewUtils {
 
+    private WebViewUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
+
     /**
      * Enable java script.
      *
@@ -68,10 +73,5 @@ public class WebViewUtils {
             CookieSyncManager.getInstance().startSync();
             CookieSyncManager.getInstance().sync();
         }
-    }
-
-    private WebViewUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

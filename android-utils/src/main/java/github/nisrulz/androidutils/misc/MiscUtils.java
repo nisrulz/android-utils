@@ -16,18 +16,20 @@
 
 package github.nisrulz.androidutils.misc;
 
-import static android.view.WindowManager.LayoutParams;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.os.StrictMode;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import static android.view.WindowManager.LayoutParams;
 
 /**
  * The type Misc utils.
@@ -35,6 +37,11 @@ import org.json.JSONObject;
  * @author Nishant Srivastava
  */
 public class MiscUtils {
+
+    private MiscUtils() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Check if permission granted boolean.
@@ -126,12 +133,5 @@ public class MiscUtils {
      */
     public static int getRandomNumberInRange(int min, int max) {
         return (min + (int) (Math.random() * ((max - min) + 1)));
-    }
-
-
-
-    private MiscUtils() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }

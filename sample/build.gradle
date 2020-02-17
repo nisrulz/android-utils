@@ -15,51 +15,37 @@
  */
 
 apply plugin: 'com.android.application'
-apply from: '../dependencies.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+// Configs
+apply from: "$rootProject.projectDir/configs/common.gradle"
 
 android {
-    compileSdkVersion versions.compileSdk
-
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
         applicationId "github.nisrulz.sampleandroidutils"
-        versionCode versions.appVersionCode
-        versionName versions.appVersionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 
-    lintOptions {
-        textOutput "stdout"
-        textReport true
-        checkAllWarnings true
-        warningsAsErrors true
-        showAll true
-        explainIssues true
-        abortOnError false
-        lintConfig file("$projectDir/lint.xml")
+        versionCode Versions.appCode
+        versionName Versions.appName
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Testing
-    testImplementation unitTestLibs
-    androidTestImplementation androidTestsLibs
+    // Kotlin
+    implementation Dependencies.kotlinStdLib
 
-    implementation supportLibs
-    implementation network.okhttp
-    implementation network.interceptor
+    // AndroidX
+    implementation Dependencies.andxAppCompat
+    implementation Dependencies.andxCore
 
-    implementation kotlin.stdLib
+    implementation Dependencies.okhttp
+    implementation Dependencies.okhttpInterceptor
 
-    // implementation 'com.github.nisrulz:android-utils:1.0.7'
+    // implementation 'com.github.nisrulz:android-utils:1.0.8'
     implementation project(':android-utils')
+
+    // implementation 'com.github.nisrulz:android-utils-ktx:1.0.8'
+    implementation project(':android-utils-ktx')
 }

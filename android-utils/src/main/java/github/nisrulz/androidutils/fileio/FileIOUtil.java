@@ -17,6 +17,7 @@
 package github.nisrulz.androidutils.fileio;
 
 import android.content.Context;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -29,6 +30,11 @@ import java.util.HashMap;
  * The type File io util.
  */
 public class FileIOUtil {
+
+    private FileIOUtil() {
+        throw new UnsupportedOperationException(
+                "Should not create instance of Util class. Please use as static..");
+    }
 
     /**
      * Load hash map from file hash map.
@@ -67,7 +73,7 @@ public class FileIOUtil {
      * @param h        the h
      */
     public static void saveHashMapToFile(Context context, String fileName,
-            HashMap<String, String> h) {
+                                         HashMap<String, String> h) {
         String filePath = context.getFilesDir().getPath() + "/" + fileName;
         File f = new File(filePath);
         try {
@@ -82,10 +88,5 @@ public class FileIOUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private FileIOUtil() {
-        throw new UnsupportedOperationException(
-                "Should not create instance of Util class. Please use as static..");
     }
 }
