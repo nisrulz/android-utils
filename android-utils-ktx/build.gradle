@@ -8,8 +8,9 @@ apply from: "$rootProject.projectDir/configs/library.gradle"
 dependencies {
     compileOnly Dependencies.kotlinStdLib
 
-    implementation Dependencies.andxAnnotation
-    implementation Dependencies.andxCore
-    implementation 'androidx.fragment:fragment-ktx:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0'
+    compileOnly Dependencies.andxAnnotation
+    compileOnly Dependencies.andxCore
+
+    compileOnly Dependencies.andxFragment
+    compileOnly Dependencies.material
 }

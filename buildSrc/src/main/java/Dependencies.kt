@@ -30,11 +30,13 @@ object Dependencies {
     // AndroidX
     const val andxAppCompat = "androidx.appcompat:appcompat:${Versions.andxAppcompat}"
     const val andxCore = "androidx.core:core:${Versions.andxCore}"
+    const val andxFragment = "androidx.fragment:fragment-ktx:${Versions.andxFragment}"
     const val andxAnnotation = "androidx.annotation:annotation:${Versions.andxAnnoation}"
     const val andxConstraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.andxConstraintLayout}"
     const val andxLifecycleRuntime =
             "androidx.lifecycle:lifecycle-runtime:${Versions.andxLifecycleRuntime}"
+    const val material = "com.google.android.material:material:${Versions.material}"
 
     // Network
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"

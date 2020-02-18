@@ -30,9 +30,11 @@ object Versions {
     const val kotlin = "1.3.61"
     const val andxAppcompat = "1.1.0"
     const val andxCore = "1.1.0"
+    const val andxFragment = "1.2.1"
     const val andxAnnoation = "1.1.0"
     const val andxLifecycleRuntime = "2.2.0"
     const val andxConstraintLayout = "1.1.3"
+    const val material = "1.1.0"
 
     // Network
     const val okhttp = "3.10.0"
