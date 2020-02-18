@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 // Configs
 apply from: "$rootProject.projectDir/configs/common.gradle"
-apply from: "$rootProject.projectDir/configs/library.gradle"
+apply from: "$rootProject.projectDir/configs/library-ktx.gradle"
 
 dependencies {
     compileOnly Dependencies.kotlinStdLib
