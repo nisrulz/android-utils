@@ -39,16 +39,16 @@ dependencies {
     // AndroidX
     implementation Dependencies.andxAnnotation
     implementation Dependencies.andxCore
-
     implementation Dependencies.andxFragment
-    implementation Dependencies.material
 
+    // Other
+    implementation Dependencies.material
     implementation Dependencies.okhttp
     implementation Dependencies.okhttpInterceptor
 
-    // implementation 'com.github.nisrulz:android-utils:1.0.8'
+    // implementation 'com.github.nisrulz:android-utils:1.1.0'
     implementation project(':android-utils')
 
-    // implementation 'com.github.nisrulz:android-utils-ktx:1.0.8'
+    // implementation 'com.github.nisrulz:android-utils-ktx:1.1.0'
     implementation project(':android-utils-ktx')
 }
