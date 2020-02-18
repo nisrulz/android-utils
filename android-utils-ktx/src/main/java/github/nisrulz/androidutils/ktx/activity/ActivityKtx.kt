@@ -35,6 +35,7 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import github.nisrulz.androidutils.ktx.misc.VersionUtils
+import github.nisrulz.androidutils.ktx.misc.inputMethodManager
 
 
 inline fun <reified T : Activity> Activity.startActivity() = startActivity(Intent(this, T::class.java))
@@ -75,20 +76,18 @@ fun Activity.steepStatusBar() {
 }
 
 fun Activity.hideInputMethod() = window.peekDecorView()?.let {
-    (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-            .hideSoftInputFromWindow(window.peekDecorView().windowToken, 0)
+    (this.inputMethodManager.hideSoftInputFromWindow(window.peekDecorView().windowToken, 0))
 }
 
 fun Activity.showInputMethod(v: EditText) {
     v.requestFocus()
-    (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(v, InputMethodManager.SHOW_FORCED)
+    (this.inputMethodManager.showSoftInput(v, InputMethodManager.SHOW_FORCED))
 }
 
 
 // Hide On Screen Keyboard for EditText
 fun Activity.hideOnScreenKeyboardForEditText(editText: EditText) {
-    (this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-            .hideSoftInputFromWindow(editText.windowToken, 0)
+    (this.inputMethodManager.hideSoftInputFromWindow(editText.windowToken, 0))
 }
 
 fun Activity.setOrientation(status: Boolean) {

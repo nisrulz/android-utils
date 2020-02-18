@@ -46,7 +46,7 @@ import androidx.core.content.ContextCompat
 
 @RequiresPermission(permission.ACCESS_NETWORK_STATE)
 fun Context.isConnectedToNetwork(): Boolean {
-    val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val connectivityManager = this.connectivityManager
     val activeNetworkInfo = connectivityManager.activeNetworkInfo
     return activeNetworkInfo?.isConnected ?: false
 }

@@ -37,7 +37,7 @@ object Versions {
     const val material = "1.1.0"
 
     // Network
-    const val okhttp = "3.10.0"
+    const val okhttp = "4.4.0"
     const val okhttpInterceptor = okhttp
 
     // Testing
@@ -53,6 +53,6 @@ object Versions {
     const val appName = "1.0.0"
 
     // Library
-    const val libraryCode = 8
-    const val libraryName = "1.0.8"
+    const val libraryCode = 9
+    const val libraryName = "1.1.0"
 }

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.MODE_FIXED
 
-private fun TabLayout.switchToFixedTabModeIfNumberOfTabsFitInScreen() {
+fun TabLayout.switchToFixedTabModeIfNumberOfTabsFitInScreen() {
     addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
         var totalWidth = 0
         var maxWidth = 0
