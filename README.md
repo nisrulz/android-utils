@@ -81,6 +81,9 @@ implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
 // android-utils
 implementation 'com.github.nisrulz:android-utils:{latest version}'
 ```
+where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Aandroid-utils-ktx/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Aandroid-utils-ktx/_latestVersion)
+
+---
 
 Android-Utils-Ktx is available in the Jcenter, so getting it as simple as adding it as a dependency
 
