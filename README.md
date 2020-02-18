@@ -15,10 +15,6 @@
     <a href="https://android-arsenal.com/api?level=14">
         <img src="https://img.shields.io/badge/API-14%2B-orange.svg?style=flat"/>
     </a>
-    <!-- Circle CI -->
-    <a href="https://circleci.com/gh/nisrulz/android-utils/tree/master">
-        <img src="https://circleci.com/gh/nisrulz/android-utils.svg?style=svg"/>
-    </a>
     <!-- Android Arsenal -->
     <a href="https://android-arsenal.com/details/1/4068">
         <img src="https://img.shields.io/badge/Android%20Arsenal-android--utils-green.svg?style=true"/>
