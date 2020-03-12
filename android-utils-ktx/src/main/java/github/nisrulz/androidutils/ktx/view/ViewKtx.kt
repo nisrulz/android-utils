@@ -21,10 +21,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Outline
 import android.os.Build
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.ViewOutlineProvider
+import android.view.*
 import android.view.animation.AlphaAnimation
 import androidx.annotation.*
 import androidx.annotation.IntRange
@@ -41,17 +38,15 @@ fun View.decreaseWidthByPercentage(@IntRange(from = 0, to = 100) percentageDecre
     this.layoutParams = params
 }
 
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 fun View.setupElevationProperty(value: Float) {
-    if (VersionUtils.isLollipop()) {
-        this.elevation = value
-    }
+    this.elevation = value
 }
 
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 fun View.setupElevationProperty(@DimenRes id: Int) {
     val DEFAULT_ELEVATION = 8.0f
-    if (VersionUtils.isLollipop()) {
-        this.setupElevationProperty(this.context?.resources?.getDimension(id) ?: DEFAULT_ELEVATION)
-    }
+    this.setupElevationProperty(this.context?.resources?.getDimension(id) ?: DEFAULT_ELEVATION)
 }
 
 // Get the children at index
@@ -89,26 +84,39 @@ fun ViewGroup.children() = object : Iterable<View> {
     }
 }
 
-fun View.showWithFadeIn() {
-    this.alpha = 0f
-    this.show()
-    this.animate().alpha(1f)
+fun View.showWithFadeIn(): ViewPropertyAnimator? {
+    alpha = 0f
+    show()
+    return animateWithStartDelay(0).alpha(1f)
 }
 
 @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
-fun View.hideWithFadeOut() {
-    this.alpha = 1f
-    this.animate().alpha(0f).withEndAction {
-        this.hide()
+fun View.hideWithFadeOut(): ViewPropertyAnimator? {
+    alpha = 1f
+    return animateWithStartDelay(0).alpha(0f).withEndAction {
+        hide()
     }
 }
 
 @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
-fun View.goneWithFadeOut() {
-    this.alpha = 1f
-    this.animate().alpha(0f).withEndAction {
-        this.gone()
+fun View.hideWithFadeOutAfterDelay(delay: Long): ViewPropertyAnimator? {
+    alpha = 1f
+    return animateWithStartDelay(delay).alpha(0f).withEndAction {
+        hide()
     }
+}
+
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
+fun View.goneWithFadeOut(): ViewPropertyAnimator? {
+    alpha = 1f
+    return animateWithStartDelay(0).alpha(0f).withEndAction {
+        gone()
+    }
+}
+
+fun View.animateWithStartDelay(delay: Long): ViewPropertyAnimator {
+    clearAnimation()
+    return animate().setStartDelay(delay)
 }
 
 
@@ -188,7 +196,7 @@ fun View.show() {
     }
 }
 
-inline fun View.visibleIf(block: () -> Boolean) {
+inline fun View.showIf(block: () -> Boolean) {
     if (visibility != View.VISIBLE && block()) {
         visibility = View.VISIBLE
     }
@@ -200,7 +208,7 @@ fun View.hide() {
     }
 }
 
-inline fun View.invisibleIf(block: () -> Boolean) {
+inline fun View.hideIf(block: () -> Boolean) {
     if (visibility != View.INVISIBLE && block()) {
         visibility = View.INVISIBLE
     }
@@ -240,5 +248,22 @@ object CircularOutlineProvider : ViewOutlineProvider() {
                 view.width - view.paddingRight,
                 view.height - view.paddingBottom
         )
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+fun View.setMargins(
+        startMarginDp: Int? = null,
+        topMarginDp: Int? = null,
+        endMarginDp: Int? = null,
+        bottomMarginDp: Int? = null
+) {
+    if (layoutParams is ViewGroup.MarginLayoutParams) {
+        val params = layoutParams as ViewGroup.MarginLayoutParams
+        startMarginDp?.run { params.marginStart = this }
+        topMarginDp?.run { params.topMargin = this }
+        endMarginDp?.run { params.marginEnd = this }
+        bottomMarginDp?.run { params.bottomMargin = this }
+        requestLayout()
     }
 }

@@ -1,8 +1,13 @@
 package github.nisrulz.androidutils.ktx.view
 
+import android.renderscript.ScriptGroup
+import android.text.InputFilter
+import android.text.Spanned
 import android.text.method.PasswordTransformationMethod
 import android.text.method.ReplacementTransformationMethod
 import android.widget.EditText
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 fun EditText.uppercase() {
@@ -36,3 +41,22 @@ fun EditText.passwordToggledVisible() {
 var EditText.value: String
     get() = text.toString()
     set(value) = setText(value)
+
+fun EditText.disallowEmojisAndSpecialChars() {
+    val emojiFilter = InputFilter { source: CharSequence, start: Int, end: Int, dest: Spanned?, dstart: Int, dend: Int ->
+        var index = start
+        while (index < end) {
+            val type = Character.getType(source[index])
+            if (type == Character.SURROGATE.toInt() || type == Character.NON_SPACING_MARK.toInt() || type == Character.OTHER_SYMBOL.toInt()) {
+                ""
+            }
+            index++
+        }
+        null
+    }
+
+    val filterList: ArrayList<InputFilter> = ArrayList(this.filters.size)
+    this.filters.asSequence().map { filterList.add(it) }
+    filterList.add(emojiFilter)
+    filters = filterList.toArray(arrayOf<InputFilter>())
+}
