@@ -37,7 +37,9 @@ subprojects {
 
         // Config
         apply from: "$rootProject.projectDir/configs/common.gradle"
-        apply from: "$rootProject.projectDir/configs/library-ktx.gradle"
+        if (project.name.contains('-ktx')) {
+            apply from: "$rootProject.projectDir/configs/library-ktx.gradle"
+        }
     }
 }
 
